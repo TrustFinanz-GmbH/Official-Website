@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Console — TrustFinanz GmbH</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="../assets/images/Top-Logo.png" />
+    <link rel="apple-touch-icon" href="../assets/images/Top-Logo.png" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ═══════════════════════════════════
+           CSS CUSTOM PROPERTIES — THEMES
+        ═══════════════════════════════════ */
+        :root {
+            --bg:           #f4f4f4;
+            --surface:      #ffffff;
+            --surface-2:    #f9f9f9;
+            --border:       #e5e5e5;
+            --border-2:     #ebebeb;
+            --text:         #111111;
+            --text-muted:   #555555;
+            --text-faint:   #999999;
+            --topbar:       #ffffff;
+            --topbar-border:#e5e5e5;
+            --input-bg:     #fafafa;
+            --badge-bg:     #f2f2f2;
+            --badge-text:   #444444;
+            --badge-border: #dedede;
+            --row-hover:    #fafafa;
+            --shadow:       0 2px 12px rgba(0,0,0,0.07);
+            --shadow-modal: 0 20px 60px rgba(0,0,0,0.13);
+            --modal-bg:     #ffffff;
+            --code-bg:      #f7f7f7;
+            --toast-bg:     #ffffff;
+            --empty-icon:   #cccccc;
+        }
+
+        [data-theme="dark"] {
+            --bg:           #0a0b0c;
+            --surface:      #131415;
+            --surface-2:    #1a1b1c;
+            --border:       rgba(255,255,255,0.075);
+            --border-2:     rgba(255,255,255,0.045);
+            --text:         #f0f0f0;
+            --text-muted:   #888888;
+            --text-faint:   #555555;
+            --topbar:       rgba(10,11,12,0.97);
+            --topbar-border:rgba(255,255,255,0.06);
+            --input-bg:     #0e0f10;
+            --badge-bg:     rgba(255,255,255,0.06);
+            --badge-text:   #aaaaaa;
+            --badge-border: rgba(255,255,255,0.1);
+            --row-hover:    rgba(255,255,255,0.03);
+            --shadow:       0 2px 16px rgba(0,0,0,0.4);
+            --shadow-modal: 0 24px 80px rgba(0,0,0,0.55);
+            --modal-bg:     #131415;
+            --code-bg:      #0e0f10;
+            --toast-bg:     #1a1b1c;
+            --empty-icon:   #333333;
+        }
+
+        /* ═══════════════════════════════════
+           BASE
+        ═══════════════════════════════════ */
+        * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+            font-weight: normal; font-style: normal;
+            display: inline-block; line-height: 1;
+            letter-spacing: normal; text-transform: none;
+            vertical-align: middle;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            transition: background 0.25s, color 0.25s;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+        /* ═══════════════════════════════════
+           GOLD BAR
+        ═══════════════════════════════════ */
+        .gold-bar {
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #C9A84C 20%, #F0D98A 50%, #C9A84C 80%, transparent 100%);
+            flex-shrink: 0;
+        }
+
+        /* ═══════════════════════════════════
+           LOGIN — always dark, brand-matched
+        ═══════════════════════════════════ */
+        .login-wrap {
+            background: #111213;
+            position: fixed; inset: 0;
+            display: flex;
+        }
+        /* Left accent panel */
+        .login-left {
+            width: 45%;
+            background: #0a0b0c;
+            border-right: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 48px 56px;
+        }
+        @media (max-width: 768px) { .login-left { display: none; } }
+        /* Right form panel */
+        .login-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 48px;
+            overflow-y: auto;
+        }
+        @media (max-width: 768px) { .login-right { padding: 32px 24px; } }
+        /* Bottom-border inputs — matches main site contact form exactly */
+        .login-field {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+            color: #f0f0f0;
+            padding: 10px 0;
+            font-size: 14px;
+            font-family: 'Bahnschrift', 'Inter', sans-serif;
+            letter-spacing: 0.01em;
+            transition: border-color 0.25s;
+        }
+        .login-field:focus {
+            outline: none;
+            border-bottom-color: rgba(255,255,255,0.7);
+        }
+        .login-field::placeholder { color: rgba(255,255,255,0.18); }
+        .login-label {
+            font-size: 9px; letter-spacing: 0.16em;
+            text-transform: uppercase; color: rgba(255,255,255,0.35);
+            display: block; margin-bottom: 8px;
+            font-family: 'Bahnschrift', 'Inter', sans-serif;
+        }
+        /* CTA button — matches main site exactly */
+        .login-btn-el {
+            width: 100%;
+            background: #f0f0f0;
+            color: #111;
+            border: none;
+            padding: 16px 0;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: 'Bahnschrift', 'Inter', sans-serif;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: background 0.25s, color 0.25s;
+        }
+        .login-btn-el:hover { background: #bb0114; color: #fff; }
+        .login-btn-el:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* ═══════════════════════════════════
+           TOPBAR
+        ═══════════════════════════════════ */
+        .topbar {
+            background: var(--topbar);
+            border-bottom: 1px solid var(--topbar-border);
+            backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 40;
+            transition: background 0.25s, border-color 0.25s;
+        }
+
+        /* ═══════════════════════════════════
+           STAT CARD
+        ═══════════════════════════════════ */
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: background 0.25s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .stat-card:hover {
+            border-color: #bbb;
+            transform: translateY(-1px);
+        }
+        [data-theme="dark"] .stat-card:hover { border-color: rgba(255,255,255,0.14); }
+
+        /* ═══════════════════════════════════
+           TABLE ROW
+        ═══════════════════════════════════ */
+        .inquiry-row {
+            border-bottom: 1px solid var(--border-2);
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+        .inquiry-row:hover { background: var(--row-hover); }
+        .inquiry-row:last-child { border-bottom: none; }
+
+        /* ═══════════════════════════════════
+           BADGES — monochrome
+        ═══════════════════════════════════ */
+        .badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid var(--badge-border);
+            font-size: 9px; letter-spacing: 0.1em;
+            text-transform: uppercase; padding: 2px 8px;
+            white-space: nowrap;
+            transition: background 0.25s, color 0.25s, border-color 0.25s;
+        }
+        .status-new {
+            background: var(--text);
+            color: var(--bg);
+            border: 1px solid var(--text);
+            font-size: 9px; letter-spacing: 0.1em;
+            text-transform: uppercase; padding: 2px 8px;
+            transition: background 0.25s, color 0.25s;
+        }
+        .status-contacted {
+            background: var(--badge-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--badge-border);
+            font-size: 9px; letter-spacing: 0.1em;
+            text-transform: uppercase; padding: 2px 8px;
+            transition: background 0.25s, color 0.25s;
+        }
+
+        /* ═══════════════════════════════════
+           INPUTS (dashboard)
+        ═══════════════════════════════════ */
+        .admin-input {
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            transition: border-color 0.2s, background 0.25s;
+        }
+        .admin-input:focus {
+            outline: none;
+            border-color: var(--text-muted);
+        }
+        .admin-input::placeholder { color: var(--text-faint); }
+
+        select.admin-select {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            -webkit-appearance: none; appearance: none;
+            transition: border-color 0.2s, background 0.25s;
+        }
+        select.admin-select:focus { outline: none; border-color: var(--text-muted); }
+
+        /* ═══════════════════════════════════
+           MODAL
+        ═══════════════════════════════════ */
+        .modal-overlay { background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); }
+        .modal-card {
+            background: var(--modal-bg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-modal);
+            transition: background 0.25s;
+        }
+
+        /* ═══════════════════════════════════
+           FIELD LABEL
+        ═══════════════════════════════════ */
+        .fl {
+            font-size: 9px; letter-spacing: 0.16em;
+            text-transform: uppercase; color: var(--text-faint);
+            margin-bottom: 5px;
+            transition: color 0.25s;
+        }
+        p.fl, label.fl, div.fl { display: block; }
+
+        /* ═══════════════════════════════════
+           ACTION BUTTONS
+        ═══════════════════════════════════ */
+        .action-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 8px 16px;
+            background: var(--surface); color: var(--text-muted);
+            border: 1px solid var(--border);
+            cursor: pointer; text-decoration: none;
+            transition: background 0.15s, border-color 0.15s, color 0.15s;
+        }
+        .action-btn:hover {
+            background: var(--surface-2);
+            border-color: var(--text-faint);
+            color: var(--text);
+        }
+        .action-btn.primary {
+            background: var(--text); color: var(--bg);
+            border-color: var(--text);
+        }
+        .action-btn.primary:hover { opacity: 0.85; }
+        .action-btn.danger { color: #c00; border-color: var(--border); }
+        .action-btn.danger:hover { background: rgba(200,0,0,0.05); border-color: #fbb; color: #b00; }
+
+        /* ═══════════════════════════════════
+           TOGGLE BUTTON
+        ═══════════════════════════════════ */
+        .theme-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 32px; height: 32px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+        .theme-btn:hover { background: var(--surface-2); color: var(--text); border-color: var(--text-faint); }
+
+        /* ═══════════════════════════════════
+           ANIMATIONS
+        ═══════════════════════════════════ */
+        @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes spin   { to   { transform: rotate(360deg); } }
+
+        .fade-up { animation: fadeUp 0.4s cubic-bezier(0.16,1,0.3,1) forwards; opacity:0; }
+        .fade-in { animation: fadeIn 0.3s ease forwards; }
+        .spin    { animation: spin  0.75s linear infinite; }
+
+        .d1 { animation-delay: 0.05s; }
+        .d2 { animation-delay: 0.10s; }
+        .d3 { animation-delay: 0.15s; }
+        .d4 { animation-delay: 0.20s; }
+        .d5 { animation-delay: 0.25s; }
+
+        /* ═══════════════════════════════════
+           TOAST
+        ═══════════════════════════════════ */
+        .toast {
+            background: var(--toast-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            box-shadow: var(--shadow);
+        }
+
+        /* ═══════════════════════════════════
+           LOADING OVERLAY
+        ═══════════════════════════════════ */
+        #loading-overlay { background: #0a0b0c; }
+    </style>
+</head>
+
+<body>
+
+<!-- ══════ LOADING ══════ -->
+<div id="loading-overlay" class="fixed inset-0 flex items-center justify-center z-[100]">
+    <div class="flex flex-col items-center gap-4">
+        <div class="relative w-9 h-9">
+            <div class="absolute inset-0 border border-white/10 rounded-full"></div>
+            <div class="absolute inset-0 border-t border-[#C9A84C] rounded-full spin"></div>
+        </div>
+        <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#444;">TrustFinanz · Loading</p>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     LOGIN SCREEN — always dark
+══════════════════════════════════════════ -->
+<div id="login-screen" class="login-wrap hidden">
+
+    <!-- LEFT PANEL: Brand identity -->
+    <div class="login-left">
+        <div>
+            <div style="width:32px;height:2px;background:#bb0114;margin-bottom:32px;"></div>
+            <p style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;font-family:'Bahnschrift','Inter',sans-serif;">TrustFinanz GmbH</p>
+            <h2 style="font-size:32px;font-weight:300;color:#f0f0f0;line-height:1.25;margin:0;font-family:'Bahnschrift','Inter',sans-serif;">
+                Building Trust<br>Across Global<br>Investments.
+            </h2>
+        </div>
+        <div>
+            <div style="width:100%;height:1px;background:rgba(255,255,255,0.07);margin-bottom:24px;"></div>
+            <p style="font-size:10px;color:rgba(255,255,255,0.2);line-height:1.7;font-family:'Bahnschrift','Inter',sans-serif;">
+                Chamerstrasse 176 · Zug 6300<br>
+                Switzerland
+            </p>
+        </div>
+    </div>
+
+    <!-- RIGHT PANEL: Login form -->
+    <div class="login-right fade-up">
+        <div style="max-width:380px;width:100%;">
+
+            <!-- Top gold bar -->
+            <div class="gold-bar" style="margin-bottom:56px;"></div>
+
+            <!-- Header -->
+            <p style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:0 0 12px;font-family:'Bahnschrift','Inter',sans-serif;">Secure Access</p>
+            <h1 style="font-size:26px;font-weight:300;color:#f0f0f0;margin:0 0 40px;letter-spacing:-0.01em;font-family:'Bahnschrift','Inter',sans-serif;">Admin Console</h1>
+
+            <!-- Form -->
+            <form id="login-form" style="display:flex;flex-direction:column;gap:28px;">
+                <div>
+                    <label class="login-label">Email Address</label>
+                    <input id="login-email" type="email" required autocomplete="email"
+                        placeholder="admin@trustfinanz.ch"
+                        class="login-field" />
+                </div>
+                <div>
+                    <label class="login-label">Password</label>
+                    <div style="position:relative;">
+                        <input id="login-password" type="password" required autocomplete="current-password"
+                            placeholder="Enter your password"
+                            class="login-field" style="padding-right:32px;" />
+                        <button type="button" id="toggle-pw"
+                            style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.25);padding:0;display:flex;align-items:center;transition:color 0.2s;"
+                            onmouseover="this.style.color='rgba(255,255,255,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">
+                            <span class="material-symbols-outlined" style="font-size:16px;">visibility</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Error -->
+                <div id="login-error" style="display:none;align-items:center;gap:8px;border-left:2px solid #bb0114;padding:8px 12px;font-size:12px;color:rgba(255,100,100,0.9);font-family:'Bahnschrift','Inter',sans-serif;">
+                    <span id="login-error-text">Incorrect email or password.</span>
+                </div>
+
+                <div style="padding-top:8px;">
+                    <button id="login-btn" type="submit" class="login-btn-el">
+                        <span id="login-label">Sign In</span>
+                        <span id="login-spinner" class="material-symbols-outlined spin" style="font-size:14px;display:none;">progress_activity</span>
+                    </button>
+                </div>
+            </form>
+
+            <p style="margin-top:32px;font-size:10px;color:rgba(255,255,255,0.15);line-height:1.7;font-family:'Bahnschrift','Inter',sans-serif;">
+                All sessions are encrypted · Unauthorised access is prohibited.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DASHBOARD
+══════════════════════════════════════════ -->
+<div id="dashboard-screen" class="hidden" style="min-height:100vh;display:none;flex-direction:column;">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="gold-bar"></div>
+        <div style="max-width:1400px;margin:0 auto;padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+            <!-- Left -->
+            <div style="display:flex;align-items:center;gap:12px;">
+                <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);font-weight:500;">Admin Console</span>
+            </div>
+            <!-- Right -->
+            <div style="display:flex;align-items:center;gap:12px;">
+                <p style="font-size:11px;color:var(--text-faint);" id="admin-email-display" class="hidden sm:block">admin</p>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle-btn" class="theme-btn" title="Toggle dark/light mode">
+                    <span class="material-symbols-outlined" id="theme-icon" style="font-size:16px;">dark_mode</span>
+                </button>
+
+                <!-- Refresh -->
+                <button id="refresh-btn" title="Refresh data" class="theme-btn">
+                    <span class="material-symbols-outlined" style="font-size:16px;">refresh</span>
+                </button>
+
+                <!-- Sign Out -->
+                <button id="logout-btn"
+                    style="display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);background:var(--surface);padding:6px 12px;cursor:pointer;transition:color 0.15s,border-color 0.15s;">
+                    <span class="material-symbols-outlined" style="font-size:13px;">logout</span>
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="flex:1;max-width:1400px;margin:0 auto;width:100%;padding:40px 24px;display:flex;flex-direction:column;gap:32px;">
+
+        <!-- Page header -->
+        <div class="fade-up" style="display:flex;align-items:flex-end;justify-content:space-between;">
+            <div>
+                <p class="fl" style="margin-bottom:4px;">Contact Management</p>
+                <h2 style="font-size:24px;font-weight:300;color:var(--text);margin:0;">Inquiry Dashboard</h2>
+            </div>
+            <p style="font-size:11px;color:var(--text-faint);" id="last-updated">Loading…</p>
+        </div>
+
+        <!-- STATS -->
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;" id="stats-grid">
+            <!-- rendered via JS -->
+        </div>
+
+        <!-- FILTERS -->
+        <div class="fade-up d2" style="display:flex;flex-wrap:wrap;gap:10px;">
+            <div style="position:relative;flex:1;min-width:220px;">
+                <span class="material-symbols-outlined" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:15px;color:var(--text-faint);">search</span>
+                <input id="search-input" type="text" placeholder="Search by name, email, company, message…"
+                    class="admin-input"
+                    style="width:100%;padding:10px 16px 10px 36px;font-size:13px;" />
+            </div>
+            <select id="division-filter" class="admin-select" style="padding:10px 16px;font-size:13px;min-width:155px;">
+                <option value="">All Divisions</option>
+                <option value="Trust Gold">Trust Gold</option>
+                <option value="Trust Trade Finance">Trust Trade Finance</option>
+                <option value="Trust Real Estate">Trust Real Estate</option>
+                <option value="General Inquiry">General Inquiry</option>
+            </select>
+            <select id="status-filter" class="admin-select" style="padding:10px 16px;font-size:13px;min-width:125px;">
+                <option value="">All Status</option>
+                <option value="new">New</option>
+                <option value="contacted">Contacted</option>
+            </select>
+            <select id="sort-select" class="admin-select" style="padding:10px 16px;font-size:13px;min-width:140px;">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+            </select>
+        </div>
+
+        <p style="font-size:11px;color:var(--text-faint);margin-top:-16px;" id="results-count">Loading…</p>
+
+        <!-- TABLE -->
+        <div class="stat-card fade-up d3" style="overflow-x:auto;">
+            <table style="width:100%;min-width:760px;border-collapse:collapse;">
+                <thead>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <th class="fl" style="text-align:left;padding:14px 20px;width:40px;">#</th>
+                        <th class="fl" style="text-align:left;padding:14px 20px;">Contact</th>
+                        <th class="fl" style="text-align:left;padding:14px 20px;">Email & Phone</th>
+                        <th class="fl" style="text-align:left;padding:14px 20px;">Division</th>
+                        <th class="fl" style="text-align:left;padding:14px 20px;">Status</th>
+                        <th class="fl" style="text-align:left;padding:14px 20px;">Submitted</th>
+                        <th style="padding:14px 20px;width:80px;"></th>
+                    </tr>
+                </thead>
+                <tbody id="inquiries-tbody"></tbody>
+            </table>
+
+            <div id="empty-state" style="display:none;padding:64px;text-align:center;">
+                <span class="material-symbols-outlined" style="font-size:40px;color:var(--empty-icon);display:block;margin-bottom:10px;">inbox</span>
+                <p style="font-size:13px;color:var(--text-faint);">No inquiries match your filters.</p>
+            </div>
+            <div id="table-loading" style="padding:40px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--text-faint);">
+                <span class="material-symbols-outlined spin" style="font-size:17px;">progress_activity</span>
+                Loading inquiries…
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DETAIL MODAL
+══════════════════════════════════════════ -->
+<div id="detail-modal" style="display:none;position:fixed;inset:0;z-index:50;align-items:center;justify-content:center;padding:16px;">
+    <div class="modal-overlay" style="position:absolute;inset:0;" id="modal-backdrop"></div>
+    <div class="modal-card fade-up" style="position:relative;width:100%;max-width:600px;max-height:92vh;overflow-y:auto;">
+        <div class="gold-bar"></div>
+
+        <!-- Modal header -->
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:28px 32px 24px;border-bottom:1px solid var(--border);">
+            <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                    <p class="fl" style="margin:0;">Inquiry</p>
+                    <span id="modal-status-badge">—</span>
+                </div>
+                <h3 style="font-size:20px;font-weight:600;color:var(--text);margin:0;" id="modal-name">—</h3>
+                <p style="font-size:13px;color:var(--text-faint);margin:4px 0 0;" id="modal-company">—</p>
+            </div>
+            <button id="modal-close-btn" style="background:none;border:none;cursor:pointer;color:var(--text-faint);padding:4px;display:flex;align-items:center;">
+                <span class="material-symbols-outlined" style="font-size:20px;">close</span>
+            </button>
+        </div>
+
+        <!-- Modal fields -->
+        <div style="padding:28px 32px;display:grid;grid-template-columns:1fr 1fr;gap:22px;">
+            <div>
+                <p class="fl">Email</p>
+                <a id="modal-email" href="#" style="font-size:13px;color:var(--text);text-decoration:none;word-break:break-all;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">—</a>
+            </div>
+            <div>
+                <p class="fl">Phone</p>
+                <a id="modal-phone" href="#" style="font-size:13px;color:var(--text);text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">—</a>
+            </div>
+            <div>
+                <p class="fl">Division</p>
+                <p id="modal-division-text" style="font-size:13px;color:var(--text);margin:0;">—</p>
+            </div>
+            <div>
+                <p class="fl">Submitted</p>
+                <p id="modal-date" style="font-size:13px;color:var(--text);margin:0;">—</p>
+            </div>
+            <div style="grid-column:1/-1;">
+                <p class="fl">Message</p>
+                <div style="background:var(--code-bg);border:1px solid var(--border);padding:16px;margin-top:4px;">
+                    <p id="modal-message" style="font-size:13px;color:var(--text-muted);line-height:1.7;margin:0;white-space:pre-wrap;">—</p>
+                </div>
+            </div>
+            <div style="grid-column:1/-1;">
+                <p class="fl">Record ID</p>
+                <p id="modal-id" style="font-size:11px;color:var(--text-faint);font-family:monospace;margin:2px 0 0;word-break:break-all;">—</p>
+            </div>
+        </div>
+
+        <!-- Modal actions -->
+        <div style="padding:0 32px 28px;display:flex;flex-wrap:wrap;gap:10px;border-top:1px solid var(--border);padding-top:20px;">
+            <button id="modal-contact-btn" class="action-btn primary">
+                <span class="material-symbols-outlined" style="font-size:13px;">check</span>
+                Mark as Contacted
+            </button>
+            <a id="modal-reply-link" href="#" class="action-btn">
+                <span class="material-symbols-outlined" style="font-size:13px;">reply</span>
+                Reply by Email
+            </a>
+            <a id="modal-call-link" href="#" class="action-btn">
+                <span class="material-symbols-outlined" style="font-size:13px;">call</span>
+                Call
+            </a>
+            <button id="modal-delete-btn" class="action-btn danger" style="margin-left:auto;">
+                <span class="material-symbols-outlined" style="font-size:13px;">delete</span>
+                Delete
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ══════ TOAST ══════ -->
+<div id="toast" class="toast fade-in" style="display:none;position:fixed;bottom:24px;right:24px;z-index:60;align-items:center;gap:12px;padding:14px 20px;font-size:13px;max-width:320px;">
+    <span class="material-symbols-outlined" id="toast-icon" style="font-size:16px;">check_circle</span>
+    <span id="toast-msg">Done.</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+/* ─── Supabase ─── */
+const SUPABASE_URL  = 'https://vbbybzqtublmpgwolaat.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZiYnlienF0dWJsbXBnd29sYWF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY3MDg1MTMsImV4cCI6MjEwMjI4NDUxM30.9D6BCWKHUrx_9NB0h9U-cHilxkKzmIj88ED6msBNudM';
+const { createClient } = supabase;
+const db = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+/* ─── State ─── */
+let allInquiries   = [];
+let currentInquiry = null;
+const $ = id => document.getElementById(id);
+
+/* ════════════════════════════════════════
+   THEME TOGGLE
+════════════════════════════════════════ */
+const htmlEl = document.documentElement;
+
+function setTheme(theme) {
+    htmlEl.setAttribute('data-theme', theme);
+    localStorage.setItem('tf-admin-theme', theme);
+    const icon = $('theme-icon');
+    if (icon) icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+}
+
+// Init from localStorage (default: light)
+(function() {
+    const saved = localStorage.getItem('tf-admin-theme') || 'light';
+    setTheme(saved);
+})();
+
+/* ════════════════════════════════════════
+   BOOT
+════════════════════════════════════════ */
+async function initApp() {
+    try {
+        const { data: { session } } = await db.auth.getSession();
+        $('loading-overlay').style.display = 'none';
+        if (session) {
+            showDashboard(session.user.email);
+            await loadInquiries();
+        } else {
+            $('login-screen').style.display = 'flex';
+            $('login-screen').classList.remove('hidden');
+        }
+    } catch (e) {
+        $('loading-overlay').style.display = 'none';
+        $('login-screen').style.display = 'flex';
+        $('login-screen').classList.remove('hidden');
+    }
+}
+
+/* ════════════════════════════════════════
+   AUTH
+════════════════════════════════════════ */
+$('login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email    = $('login-email').value.trim();
+    const password = $('login-password').value;
+    const btn      = $('login-btn');
+    const errEl    = $('login-error');
+
+    $('login-label').textContent = 'Authenticating…';
+    $('login-spinner').style.display = 'inline-block';
+    btn.disabled = true;
+    errEl.style.display = 'none';
+
+    const { data, error } = await db.auth.signInWithPassword({ email, password });
+
+    if (error) {
+        $('login-error-text').textContent = error.message.includes('Invalid') ? 'Incorrect email or password.' : error.message;
+        errEl.style.display = 'flex';
+        $('login-label').textContent = 'Sign In';
+        $('login-spinner').style.display = 'none';
+        btn.disabled = false;
+    } else {
+        $('login-screen').style.display = 'none';
+        showDashboard(data.user.email);
+        await loadInquiries();
+    }
+});
+
+$('toggle-pw').addEventListener('click', () => {
+    const inp  = $('login-password');
+    const icon = $('toggle-pw').querySelector('span');
+    inp.type   = inp.type === 'password' ? 'text' : 'password';
+    icon.textContent = inp.type === 'password' ? 'visibility' : 'visibility_off';
+});
+
+$('logout-btn').addEventListener('click', async () => {
+    await db.auth.signOut();
+    location.reload();
+});
+
+/* ════════════════════════════════════════
+   THEME TOGGLE BUTTON
+════════════════════════════════════════ */
+$('theme-toggle-btn').addEventListener('click', () => {
+    const current = htmlEl.getAttribute('data-theme') || 'light';
+    setTheme(current === 'light' ? 'dark' : 'light');
+});
+
+/* ════════════════════════════════════════
+   SHOW DASHBOARD
+════════════════════════════════════════ */
+function showDashboard(email) {
+    const dash = $('dashboard-screen');
+    dash.style.display       = 'flex';
+    dash.style.flexDirection = 'column';
+    dash.classList.remove('hidden');
+    $('admin-email-display').textContent = email;
+    buildStatsGrid();
+}
+
+/* ════════════════════════════════════════
+   STATS GRID — build once
+════════════════════════════════════════ */
+const STATS = [
+    { id: 'stat-total',  label: 'Total',        sub: 'All inquiries' },
+    { id: 'stat-new',    label: 'New',           sub: 'Awaiting contact' },
+    { id: 'stat-week',   label: 'This Week',     sub: 'Last 7 days' },
+    { id: 'stat-gold',   label: 'Trust Gold',    sub: 'Precious metals' },
+    { id: 'stat-trade',  label: 'Trade Finance', sub: 'Trade inquiries' },
+    { id: 'stat-estate', label: 'Real Estate',   sub: 'Property inquiries' },
+];
+
+function buildStatsGrid() {
+    const grid = $('stats-grid');
+    grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(180px, 1fr))';
+    grid.innerHTML = STATS.map((s, i) => `
+        <div class="stat-card fade-up ${['','d1','d2','d3','d4','d5'][i]}" style="padding:20px;">
+            <p class="fl">${s.label}</p>
+            <p id="${s.id}" style="font-size:36px;font-weight:300;color:var(--text);margin:8px 0 6px;line-height:1;">—</p>
+            <p style="font-size:10px;color:var(--text-faint);">${s.sub}</p>
+        </div>
+    `).join('');
+}
+
+/* ════════════════════════════════════════
+   LOAD DATA
+════════════════════════════════════════ */
+async function loadInquiries() {
+    $('table-loading').style.display = 'flex';
+    $('inquiries-tbody').innerHTML   = '';
+    $('empty-state').style.display   = 'none';
+
+    const { data, error } = await db
+        .from('contact_inquiries')
+        .select('*')
+        .order('submitted_at', { ascending: false });
+
+    $('table-loading').style.display = 'none';
+    if (error) { showToast('Load failed: ' + error.message, 'error'); return; }
+
+    allInquiries = data || [];
+    const now = new Date().toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+    $('last-updated').textContent = `Refreshed ${now} · ${allInquiries.length} record${allInquiries.length !== 1 ? 's' : ''}`;
+
+    renderStats(allInquiries);
+    applyFilters();
+}
+
+$('refresh-btn').addEventListener('click', async () => {
+    const icon = $('refresh-btn').querySelector('span');
+    icon.classList.add('spin');
+    await loadInquiries();
+    setTimeout(() => icon.classList.remove('spin'), 500);
+});
+
+/* ════════════════════════════════════════
+   STATS
+════════════════════════════════════════ */
+function renderStats(data) {
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const vals = {
+        total:  data.length,
+        new:    data.filter(r => (r.status || 'new') === 'new').length,
+        week:   data.filter(r => new Date(r.submitted_at) > sevenDaysAgo).length,
+        gold:   data.filter(r => r.division === 'Trust Gold').length,
+        trade:  data.filter(r => r.division === 'Trust Trade Finance').length,
+        estate: data.filter(r => r.division === 'Trust Real Estate').length,
+    };
+
+    function countUp(el, target) {
+        if (!el) return;
+        let n = 0; const step = Math.max(1, Math.ceil(target / 18));
+        const iv = setInterval(() => { n = Math.min(n + step, target); el.textContent = n; if (n >= target) clearInterval(iv); }, 28);
+    }
+
+    countUp($('stat-total'),  vals.total);
+    countUp($('stat-new'),    vals.new);
+    countUp($('stat-week'),   vals.week);
+    countUp($('stat-gold'),   vals.gold);
+    countUp($('stat-trade'),  vals.trade);
+    countUp($('stat-estate'), vals.estate);
+}
+
+/* ════════════════════════════════════════
+   FILTERS
+════════════════════════════════════════ */
+['search-input','division-filter','status-filter','sort-select'].forEach(id => {
+    $(id).addEventListener('input',  applyFilters);
+    $(id).addEventListener('change', applyFilters);
+});
+
+function applyFilters() {
+    const q   = $('search-input').value.toLowerCase();
+    const div = $('division-filter').value;
+    const st  = $('status-filter').value;
+    const srt = $('sort-select').value;
+
+    let filtered = allInquiries.filter(r => {
+        const m1 = !q || [r.full_name, r.email, r.company_name, r.message, r.phone].some(f => f && f.toLowerCase().includes(q));
+        const m2 = !div || r.division === div;
+        const m3 = !st  || (r.status || 'new') === st;
+        return m1 && m2 && m3;
+    });
+    if (srt === 'oldest') filtered = [...filtered].sort((a,b) => new Date(a.submitted_at) - new Date(b.submitted_at));
+
+    $('results-count').textContent = `Showing ${filtered.length} of ${allInquiries.length} inquiries`;
+    renderTable(filtered);
+}
+
+/* ════════════════════════════════════════
+   TABLE
+════════════════════════════════════════ */
+const DIV_SHORT = {
+    'Trust Gold': 'Gold', 'Trust Trade Finance': 'Trade Finance',
+    'Trust Real Estate': 'Real Estate', 'General Inquiry': 'General'
+};
+
+function renderTable(data) {
+    const tbody = $('inquiries-tbody');
+    const empty = $('empty-state');
+    if (!data.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+    empty.style.display = 'none';
+
+    tbody.innerHTML = data.map((r, i) => {
+        const status = r.status || 'new';
+        const d      = fmtDate(r.submitted_at);
+        const stBadge = status === 'contacted'
+            ? `<span class="status-contacted">Contacted</span>`
+            : `<span class="status-new">New</span>`;
+
+        return `
+        <tr class="inquiry-row" onclick="openModal('${esc(r.id)}')">
+            <td style="padding:16px 20px;font-size:12px;color:var(--text-faint);">${i + 1}</td>
+            <td style="padding:16px 20px;">
+                <p style="font-size:13px;font-weight:500;color:var(--text);margin:0;">${esc(r.full_name)}</p>
+                ${r.company_name ? `<p style="font-size:11px;color:var(--text-faint);margin:2px 0 0;">${esc(r.company_name)}</p>` : ''}
+            </td>
+            <td style="padding:16px 20px;">
+                <p style="font-size:13px;color:var(--text-muted);margin:0;">${esc(r.email)}</p>
+                <p style="font-size:11px;color:var(--text-faint);margin:2px 0 0;">${esc(r.phone)}</p>
+            </td>
+            <td style="padding:16px 20px;"><span class="badge">${esc(DIV_SHORT[r.division] || r.division)}</span></td>
+            <td style="padding:16px 20px;">${stBadge}</td>
+            <td style="padding:16px 20px;">
+                <p style="font-size:12px;color:var(--text-muted);margin:0;">${d.date}</p>
+                <p style="font-size:11px;color:var(--text-faint);margin:2px 0 0;">${d.time}</p>
+            </td>
+            <td style="padding:16px 20px;text-align:right;">
+                <button onclick="event.stopPropagation();openModal('${esc(r.id)}')"
+                    style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);padding:6px 14px;cursor:pointer;transition:border-color 0.15s,color 0.15s;">
+                    Open
+                </button>
+            </td>
+        </tr>`;
+    }).join('');
+}
+
+/* ════════════════════════════════════════
+   MODAL
+════════════════════════════════════════ */
+function openModal(id) {
+    const r = allInquiries.find(x => x.id === id);
+    if (!r) return;
+    currentInquiry = r;
+    const status = r.status || 'new';
+    const d = fmtDate(r.submitted_at);
+
+    $('modal-name').textContent          = r.full_name;
+    $('modal-company').textContent       = r.company_name || 'No company listed';
+    $('modal-email').textContent         = r.email;
+    $('modal-email').href                = `mailto:${r.email}`;
+    $('modal-phone').textContent         = r.phone;
+    $('modal-phone').href                = `tel:${r.phone}`;
+    $('modal-division-text').textContent = r.division;
+    $('modal-date').textContent          = `${d.date} · ${d.time}`;
+    $('modal-id').textContent            = r.id;
+    $('modal-message').textContent       = r.message;
+    $('modal-reply-link').href = `mailto:${r.email}?subject=RE: Your TrustFinanz Inquiry&body=Dear ${encodeURIComponent(r.full_name)},%0A%0A`;
+    $('modal-call-link').href  = `tel:${r.phone}`;
+
+    const badge = $('modal-status-badge');
+    const contactBtn = $('modal-contact-btn');
+    badge.outerHTML = status === 'contacted'
+        ? `<span id="modal-status-badge" class="status-contacted">Contacted</span>`
+        : `<span id="modal-status-badge" class="status-new">New</span>`;
+
+    contactBtn.disabled = status === 'contacted';
+    contactBtn.style.opacity = status === 'contacted' ? '0.4' : '';
+    contactBtn.style.cursor  = status === 'contacted' ? 'not-allowed' : '';
+
+    $('detail-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    $('detail-modal').style.display = 'none';
+    document.body.style.overflow = '';
+    currentInquiry = null;
+}
+
+$('modal-close-btn').addEventListener('click', closeModal);
+$('modal-backdrop').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+$('modal-contact-btn').addEventListener('click', async () => {
+    if (!currentInquiry || currentInquiry.status === 'contacted') return;
+    const { error } = await db.from('contact_inquiries').update({ status: 'contacted' }).eq('id', currentInquiry.id);
+    if (error) { showToast('Update failed: ' + error.message, 'error'); return; }
+    const idx = allInquiries.findIndex(r => r.id === currentInquiry.id);
+    if (idx > -1) allInquiries[idx].status = 'contacted';
+    showToast('Marked as contacted.', 'success');
+    closeModal(); renderStats(allInquiries); applyFilters();
+});
+
+$('modal-delete-btn').addEventListener('click', async () => {
+    if (!currentInquiry) return;
+    if (!confirm(`Permanently delete inquiry from "${currentInquiry.full_name}"? This cannot be undone.`)) return;
+    const { error } = await db.from('contact_inquiries').delete().eq('id', currentInquiry.id);
+    if (error) { showToast('Delete failed: ' + error.message, 'error'); return; }
+    allInquiries = allInquiries.filter(r => r.id !== currentInquiry.id);
+    showToast('Inquiry deleted.', 'info');
+    closeModal(); renderStats(allInquiries); applyFilters();
+});
+
+/* ════════════════════════════════════════
+   TOAST
+════════════════════════════════════════ */
+let toastTimer;
+function showToast(msg, type = 'success') {
+    const toast = $('toast');
+    clearTimeout(toastTimer);
+    $('toast-msg').textContent = msg;
+    $('toast-icon').textContent = { success:'check_circle', error:'error', info:'info' }[type] || 'check_circle';
+    toast.style.display = 'flex';
+    toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 3500);
+}
+
+/* ════════════════════════════════════════
+   HELPERS
+════════════════════════════════════════ */
+function fmtDate(iso) {
+    const d = new Date(iso);
+    return {
+        date: d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' }),
+        time: d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' })
+    };
+}
+function esc(str) {
+    return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+/* ─── Start ─── */
+initApp();
+</script>
+</body>
+</html>

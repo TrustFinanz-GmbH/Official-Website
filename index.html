@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en">
-
-
 
 <head>
     <!-- Google tag (gtag.js) -->
@@ -15,456 +12,233 @@
   gtag('config', 'G-7PG439HY6Z');
 </script>
 
-
     <meta charset="utf-8" />
-
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
     <title>TrustFinanz GmbH | Global Investments, Gold & Trade Finance</title>
-
     <meta name="description" content="TrustFinanz GmbH is your premier Swiss partner for wealth preservation, physical gold investments, trade finance solutions, and global real estate.">
     <link rel="icon" type="image/png" href="assets/images/Top-Logo.png" />
     <link rel="apple-touch-icon" href="assets/images/Top-Logo.png" />
 
-
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
     <link href="https://fonts.googleapis.com" rel="preconnect" />
-
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-
-
     <style>
-
         /* Embed Font.ttf for Bahnschrift Regular */
-
         @font-face {
-
             font-family: Bahnschrift;
-
             src: url(./assets/fonts/BahnschriftFont.ttf) format(truetype);
-
             font-weight: 100 900;
-
             font-display: swap;
-
     }
-
-
 
         @font-face {
-
             font-family: Bahnschrift Regular;
-
             src: url(./assets/fonts/BahnschriftFont.ttf) format(truetype);
-
             font-weight: 100 900;
-
             font-display: swap;
-
     }
-
-
 
         /* Strict typography and structural styles */
-
     *{
-
             font-family: Bahnschrift, Bahnschrift Regular, sans-serif;
-
             border-radius: 0 !important;
-
     }
-
-
 
         .material-symbols-outlined {
-
             font-family: Material Symbols Outlined !important;
-
             text-transform: none !important;
-
             font-style: normal;
-
             font-weight: normal;
-
             display: inline-block;
-
             line-height: 1;
-
             letter-spacing: normal;
-
     }
-
-
 
         /* Smooth Reveal Utility */
-
         .reveal {
-
             opacity: 1;
-
             transform: none;
-
             transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-
     }
-
-
 
         /* Spinner animation */
-
         @keyframes spin {
-
             from { transform: rotate(0deg); }
-
             to   { transform: rotate(360deg); }
-
     }
-
         .animate-spin {
-
             animation: spin 0.9s linear infinite;
-
     }
-
     </style>
 
-
-
     <script id="tailwind-config">
-
         tailwind.config = {
-
             darkMode: "class",
-
             theme: {
-
                 extend: {
-
                     "colors": {
-
                         "surface-container-lowest": "#ffffff",
-
                         "surface-container-highest": "#e3e2e2",
-
                         "outline-variant": "#e6bdb8",
-
                         "background": "#faf9f9",
-
                         "on-secondary-container": "#656464",
-
                         "secondary-fixed": "#e5e2e1",
-
                         "tertiary-fixed": "#b8eaff",
-
                         "tertiary": "#00647d",
-
                         "on-secondary": "#ffffff",
-
                         "surface-container-low": "#f4f3f3",
-
                         "on-surface": "#1a1c1c",
-
                         "on-secondary-fixed-variant": "#484646",
-
                         "surface-bright": "#faf9f9",
-
                         "on-error-container": "#93000a",
-
                         "primary-fixed": "#ffdad6",
-
                         "surface-container-high": "#e9e8e8",
-
                         "on-tertiary": "#ffffff",
-
                         "surface": "#faf9f9",
-
                         "tertiary-fixed-dim": "#71d3f6",
-
                         "inverse-primary": "#ffb4ab",
-
                         "secondary-container": "#e5e2e1",
-
                         "on-surface-variant": "#5c403c",
-
                         "on-primary-container": "#fffbff",
-
                         "on-error": "#ffffff",
-
                         "secondary-fixed-dim": "#c9c6c5",
-
                         "on-primary-fixed": "#410002",
-
                         "primary-fixed-dim": "#ffb4ab",
-
                         "on-tertiary-container": "#fafdff",
-
                         "on-secondary-fixed": "#1c1b1b",
-
                         "secondary": "#5f5e5e",
-
                         "tertiary-container": "#007f9d",
-
                         "surface-container": "#efeeed",
-
                         "on-primary": "#ffffff",
-
                         "surface-variant": "#e3e2e2",
-
                         "primary-container": "#e0292a",
-
                         "on-tertiary-fixed": "#001f28",
-
                         "surface-dim": "#dadada",
-
                         "error": "#ba1a1a",
-
                         "inverse-surface": "#2f3131",
-
                         "error-container": "#ffdad6",
-
                         "surface-tint": "#bf0716",
-
                         "primary": "#bb0114",
-
                         "on-primary-fixed-variant": "#93000d",
-
                         "on-tertiary-fixed-variant": "#004d61",
-
                         "on-background": "#1a1c1c",
-
                         "outline": "#916f6b",
-
                         "inverse-on-surface": "#f1f0f0"
-
                     },
-
                     "borderRadius": {
-
                         "DEFAULT": "0.25rem",
-
                         "lg": "0.5rem",
-
                         "xl": "0.75rem",
-
                         "full": "9999px"
-
                     },
-
                     "spacing": {
-
                         "sp-sm": "16px",
-
                         "sp-2xl": "128px",
-
                         "sp-xs": "8px",
-
                         "sp-xl": "96px",
-
                         "sp-lg": "64px",
-
                         "base": "8px",
-
                         "sp-md": "32px"
-
                     },
-
                     "fontFamily": {
-
                         "h2": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "h2-mobile": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "hero-mobile": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "h1": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "body": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "h1-mobile": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "button": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "hero": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"],
-
                         "eyebrow": ["Bahnschrift", "Bahnschrift Regular", "sans-serif"]
-
                     },
-
                     "fontSize": {
-
                         "h2": ["44px", { "lineHeight": "1.3", "fontWeight": "300" }],
-
                         "h2-mobile": ["28px", { "lineHeight": "1.3", "fontWeight": "300" }],
-
                         "hero-mobile": ["48px", { "lineHeight": "1.1", "fontWeight": "300" }],
-
                         "h1": ["64px", { "lineHeight": "1.2", "fontWeight": "600" }],
-
                         "body": ["16px", { "lineHeight": "1.7", "fontWeight": "400" }],
-
                         "h1-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "600" }],
-
                         "button": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500" }],
-
                         "hero": ["88px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }],
-
                         "eyebrow": ["11px", { "lineHeight": "1", "letterSpacing": "0.12em", "fontWeight": "500" }]
-
           }
-
         }
-
       }
-
     }
-
     </script>
-
 </head>
 
-
-
 <body class="bg-background text-on-background font-body text-body antialiased selection:bg-primary selection:text-surface-container-lowest">
-
     
-
     <!-- TopNavBar -->
-
     <header class="bg-surface-container-lowest dark:bg-inverse-surface fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline">
-
         <div class="flex justify-between items-center px-sp-md py-sp-sm max-w-[1440px] mx-auto">
-
             <a class="hover:opacity-80 transition-opacity" href="#">
-
                 <img src="assets/images/Logo-Top.jpg" alt="TrustFinanz GmbH" class="h-10 w-auto object-contain" />
-
             </a>
-
             <nav class="hidden md:flex gap-sp-lg items-center">
-
                 <a class="font-button text-button uppercase tracking-widest text-on-surface dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#about">Our Firm</a>
-
                 
-
                 <div class="relative group py-2">
-
                     <a class="font-button text-button uppercase tracking-widest text-on-surface dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 flex items-center gap-1" href="#divisions">
-
                         <span>Business Divisions</span>
-
                         <span class="material-symbols-outlined text-[16px]">expand_more</span>
-
                     </a>
-
                     <div class="absolute top-full left-0 hidden group-hover:block bg-surface-container-lowest dark:bg-inverse-surface border border-outline-variant dark:border-outline w-60 py-2 shadow-lg z-50">
-
                         <a href="./precious-metals/" class="block px-4 py-2 font-button text-button uppercase tracking-wider text-on-surface dark:text-inverse-on-surface hover:bg-surface-container-low hover:text-primary">
-
                             Trust Gold
-
                         </a>
-
                         <a href="./trade-finance/" class="block px-4 py-2 font-button text-button uppercase tracking-wider text-on-surface dark:text-inverse-on-surface hover:bg-surface-container-low hover:text-primary">
-
                             Trust Trade Finance
-
                         </a>
-
                         <a href="./real-estate/" class="block px-4 py-2 font-button text-button uppercase tracking-wider text-on-surface dark:text-inverse-on-surface hover:bg-surface-container-low hover:text-primary">
-
                             Trust Real Estate
-
                         </a>
-
                     </div>
-
                 </div>
 
-
-
                 <a class="font-button text-button uppercase tracking-widest text-on-surface dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#insights">Insights</a>
-
                 <a class="font-button text-button uppercase tracking-widest text-on-surface dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#values">Governance</a>
-
             </nav>
-
             <a class="font-button text-button uppercase tracking-widest bg-on-background text-surface-container-lowest px-6 py-4 hover:bg-primary transition-colors duration-300 hidden md:block" href="#contact">Contact</a>
-
             <button id="mobile-toggle-btn-root" class="md:hidden text-on-surface">
-
                 <span class="material-symbols-outlined">menu</span>
-
             </button>
-
         </div>
-
-
 
         <div id="mobile-nav-panel-root" class="hidden md:hidden bg-surface-container-lowest border-b border-outline-variant px-6 py-4">
-
             <nav class="flex flex-col gap-3 font-button text-button uppercase tracking-widest">
-
                 <a href="#about" class="py-1 hover:text-primary">Our Firm</a>
-
                 <a href="./precious-metals/" class="py-1 hover:text-primary">Trust Gold</a>
-
                 <a href="./trade-finance/" class="py-1 hover:text-primary">Trust Trade Finance</a>
-
                 <a href="./real-estate/" class="py-1 hover:text-primary">Trust Real Estate</a>
-
                 <a href="#insights" class="py-1 hover:text-primary">Insights</a>
-
                 <a href="#values" class="py-1 hover:text-primary">Governance</a>
-
                 <a href="#contact" class="py-1 text-primary font-bold">Contact</a>
-
             </nav>
-
         </div>
-
     </header>
 
-
-
     <!-- Main Content -->
-
     <main class="pt-[80px]">
-
         
-
         <!-- Hero Section -->
-
         <section id="hero" class="relative h-[calc(100vh-80px)] w-full flex items-center bg-inverse-surface overflow-hidden">
-
             <!-- Background Video -->
             <video id="hero-bg-video" autoplay loop muted playsinline webkit-playsinline x5-playsinline preload="auto" poster="assets/images/Homepage.png" class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none">
                 <source src="assets/images/homepage-vid.mp4" type="video/mp4">
             </video>
-
             <div class="absolute inset-0 bg-black/55 z-10"></div>
-
             <div class="relative z-20 w-full max-w-[1440px] mx-auto px-sp-md flex flex-col md:flex-row gap-sp-lg">
-
                 <div class="md:w-2/3 reveal">
-
                     <p class="font-eyebrow text-eyebrow text-primary uppercase mb-4 tracking-widest">TrustFinanz GmbH</p>
-
                     <h1 class="flex flex-col gap-1.5 sm:gap-2 text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-semibold text-surface-container-lowest mb-4 tracking-tight">
-
                         <span>Building Trust Across</span>
-
                         <span>Global Markets.</span>
-
                     </h1>
-
                     <p class="text-[11px] sm:text-[12px] font-semibold tracking-wider uppercase text-white mb-6 leading-relaxed">
                         <span class="inline-block">Wholesale Gold</span>
                         <span class="inline-block mx-1">&bull;</span>
@@ -472,300 +246,155 @@
                         <span class="inline-block mx-1">&bull;</span>
                         <span class="inline-block">Real Estate Development</span>
                     </p>
-
                     <p class="font-body text-body text-surface-container-highest max-w-lg mb-8 leading-relaxed opacity-90">
-
                         TrustFinanz GmbH is a premier Swiss-based intermediary, architecting high-value, cross-border transactions for institutional and qualified corporate clients worldwide.
-
                     </p>
-
                     <div class="flex flex-col sm:flex-row gap-4">
-
                         <a class="inline-block bg-primary text-surface-container-lowest font-button text-button uppercase px-7 py-4 text-center hover:bg-on-background transition-colors duration-300" href="#divisions">Explore Our Divisions</a>
-
                         <a class="inline-block border border-surface-container-highest text-surface-container-lowest font-button text-button uppercase px-7 py-4 text-center hover:bg-surface-container-highest hover:text-on-background transition-colors duration-300" href="#contact">Contact Our Advisors</a>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-
-
         <!-- Introduction Section -->
-
         <section id="about" class="bg-surface-container-lowest py-sp-2xl w-full">
-
             <div class="max-w-[1440px] mx-auto px-sp-md reveal">
-
                 <div class="w-16 h-[2px] bg-primary mb-sp-sm"></div>
-
                 <span class="font-eyebrow text-eyebrow text-primary uppercase tracking-widest block mb-2">A Foundation of Excellence</span>
-
                 <h2 class="font-h2-mobile text-h2-mobile md:font-h2 md:text-h2 text-on-background max-w-4xl text-balance mb-6">
-
                     Precision in Global Syndication.
-
                 </h2>
-
                 <div class="flex flex-col gap-4 font-body text-body text-on-surface-variant max-w-3xl leading-relaxed">
-
                     <p>
                         Headquartered in Switzerland’s financial hub, TrustFinanz GmbH specializes in structuring complex international transactions across three core asset classes: physical precious metals, global trade finance, and commercial real estate.
                     </p>
-
                     <p>
                         Operating purely as a strategic facilitator, we act as the nexus between global capital, verified market opportunities, and qualified counterparties. We do not operate as direct lenders or suppliers; instead, we leverage our institutional network to syndicate bespoke solutions that fulfill precise client mandates.
                     </p>
-
                     <p>
                         Our mandate is clear: optimize execution, mitigate counterparty risk, and ensure absolute regulatory compliance across global jurisdictions.
                     </p>
-
                 </div>
-
             </div>
-
         </section>
-
-
 
         <!-- Divisions Grid -->
-
         <section id="divisions" class="bg-surface-container-low py-sp-2xl w-full">
-
             <div class="max-w-[1440px] mx-auto px-sp-md">
-
                 <h3 class="font-eyebrow text-eyebrow text-on-surface-variant uppercase mb-sp-lg reveal">Core Divisions (Our Expertise)</h3>
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-sp-md">
-
                     
-
                     <!-- Card 1 -->
-
                     <div class="border border-outline-variant bg-surface-container-lowest flex flex-col reveal group cursor-pointer hover:border-primary transition-colors duration-300">
-
                         <div class="aspect-video w-full relative overflow-hidden bg-surface-container-high">
-
                             <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-
                                  data-alt="A macro photograph of stacked, unpolished gold bars in a secure, high-end vault."
-
                                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6eCzsrQgEYIsPj9jjse0Xqvk6AEALy5uOdRCgY04X96Y1rKoDCB-XrbTANb3qb6m44iBn35JUX_8Y24kJkuPPrNA8FB4Q43sG0hwGdfRDkVpHqPrIitIm3S4GI881Ny4O9KPI-nyvHb5z4Fjg3D48wFnJ2kCeZMq3-AA2aDzWe0WTGsNiozLLmZkLi16GPkQdkmsaQXnE4T22rxgWJxxETOvMTQ7Q_PnjweNjDuTb-2QdXxUO_-D5" />
-
                         </div>
-
                         <div class="p-sp-md flex-grow flex flex-col justify-between">
-
                             <div>
-
                                 <span class="font-eyebrow text-eyebrow text-primary uppercase block mb-1">Wholesale Precious Metals Facilitation</span>
-
                                 <h4 class="text-2xl sm:text-[26px] lg:text-[24px] xl:text-[28px] font-bold text-on-background mb-4 whitespace-nowrap tracking-tight">Trust Gold</h4>
-
                                 <p class="font-body text-body text-on-surface-variant mb-8">
-
                                     We orchestrate secure, over-the-counter (OTC) transactions for physical gold and select precious metals. By aligning qualified buyers with fully vetted institutional supply channels, we structure compliant, end-to-end acquisitions. Our oversight ensures seamless counterparty alignment, strict due diligence, and discreet execution within global supply chains.
-
                                 </p>
-
                             </div>
-
                             <a class="inline-flex items-center gap-2 font-button text-button uppercase text-primary group-hover:text-on-background transition-colors w-fit" href="./precious-metals/">
-
                                 Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
-
                             </a>
-
                         </div>
-
                     </div>
-
-
 
                     <!-- Card 2 -->
-
                     <div class="border border-outline-variant bg-surface-container-lowest flex flex-col reveal group cursor-pointer hover:border-primary transition-colors duration-300" style="transition-delay: 100ms;">
-
                         <div class="aspect-video w-full relative overflow-hidden bg-surface-container-high">
-
                             <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-
                                  data-alt="An abstract, high-angle shot of a massive global shipping port at dusk."
-
                                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAHLG6fhb7kYBMHFMkBiC62w85ZwbIUuvMeEtN71ERZP9rdmD3T8uaFoRh7mRWt9gFzcqLCtGY8QtBBl9_oxdJEsaWgwStDPYMdIX7X0K6wCBc0KlPXEHcE2l7hQ3WpRPym_IkMl01GCoOsU7Gj0ck5fkYTclpXMPbLyJ05AhbwNRk7jNBzPscDm9wrMAcnuUbjDArdtQvrs1vnhUGNOcBCn0qrHD9Wt68amwEun8xYmvLN-PwDp9p" />
-
                         </div>
-
                         <div class="p-sp-md flex-grow flex flex-col justify-between">
-
                             <div>
-
                                 <span class="font-eyebrow text-eyebrow text-primary uppercase block mb-1">Structured Trade Finance &amp; Liquidity Solutions</span>
-
                                 <h4 class="text-2xl sm:text-[26px] lg:text-[24px] xl:text-[28px] font-bold text-on-background mb-4 whitespace-nowrap tracking-tight">Trust Trade Finance</h4>
-
                                 <p class="font-body text-body text-on-surface-variant mb-8">
-
                                     We engineer bespoke cross-border capital architectures. By syndicating client requirements across premier global financial institutions, we optimize international trade flows. We focus on structuring sophisticated credit and liquidity frameworks designed to mitigate jurisdictional risk and facilitate complex global commerce.
-
                                 </p>
-
                             </div>
-
                             <a class="inline-flex items-center gap-2 font-button text-button uppercase text-primary group-hover:text-on-background transition-colors w-fit" href="./trade-finance/">
-
                                 Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
-
                             </a>
-
                         </div>
-
                     </div>
-
-
 
                     <!-- Card 3 -->
-
                     <div class="border border-outline-variant bg-surface-container-lowest flex flex-col reveal group cursor-pointer hover:border-primary transition-colors duration-300" style="transition-delay: 200ms;">
-
                         <div class="aspect-video w-full relative overflow-hidden bg-surface-container-high">
-
                             <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-
                                  data-alt="A stark, minimalist photograph of an ultra-modern residential high-rise interior intersecting with raw concrete and glass."
-
                                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi2Aw1Ut4YBw5Og_3RiqP5JeRcBuIcXdokMpAuA8ZHBFawo49mZR4mLSKYFgSratuCHjVUAWWRxpdtT_duKR3kA9ZfaRecUHvOD8zwG4HK-d17mYDrwCPapIRLm8njOi3XjSzHMwLpYk1eCx8kZo-jG_GOkLEnJipu9DbZkvxIu8hM2jnIJZi8Jplru6qHXR_fa51QoeS9y2ltR-rZYDvb1-FWBU855FMvg3cNzlk6F2UrNBi8UXTZ" />
-
                         </div>
-
                         <div class="p-sp-md flex-grow flex flex-col justify-between">
-
                             <div>
-
                                 <span class="font-eyebrow text-eyebrow text-primary uppercase block mb-1">Project Finance &amp; Real Estate Syndication</span>
-
                                 <h4 class="text-2xl sm:text-[26px] lg:text-[24px] xl:text-[28px] font-bold text-on-background mb-4 whitespace-nowrap tracking-tight">Trust Real Estate</h4>
-
                                 <p class="font-body text-body text-on-surface-variant mb-8">
-
                                     We structure strategic partnerships for high-yield real estate developments. Acting as the vital link between institutional capital and visionary developers, we orchestrate project financing and asset management frameworks. Our focus is on maximizing commercial viability, optimizing capital deployment, and ensuring sustainable, long-term asset value across targeted global markets.
-
                                 </p>
-
                             </div>
-
                             <a class="inline-flex items-center gap-2 font-button text-button uppercase text-primary group-hover:text-on-background transition-colors w-fit" href="./real-estate/">
-
                                 Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
-
                             </a>
-
                         </div>
-
                     </div>
 
-
-
                 </div>
-
             </div>
-
         </section>
-
-
 
         <!-- Trust Statement -->
-
         <section class="bg-inverse-surface text-surface-container-lowest py-sp-2xl w-full flex items-center justify-center text-center">
-
             <div class="max-w-[1440px] mx-auto px-sp-md reveal">
-
                 <h2 class="font-hero-mobile text-hero-mobile md:font-hero md:text-hero text-surface-container-lowest mb-4">
-
                     Trust is the ultimate currency.
-
                 </h2>
-
                 <p class="font-body text-body text-surface-container-highest max-w-xl mx-auto opacity-80">
-
                     Headquartered in Zug, Switzerland. Built on transparency, security, and global expertise.
-
                 </p>
-
             </div>
-
         </section>
-
-
 
         <!-- Core Values Section -->
-
         <section id="values" class="bg-surface-container-lowest py-sp-2xl w-full">
-
             <div class="max-w-[1440px] mx-auto px-sp-md">
-
                 <div class="mb-sp-lg reveal">
-
                     <span class="font-eyebrow text-eyebrow text-primary uppercase tracking-widest block mb-2">Our Foundation</span>
-
                     <h2 class="font-h2-mobile text-h2-mobile md:font-h2 md:text-h2 text-on-background">Our Core Values</h2>
-
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-sp-md">
-
                     <div class="border border-outline-variant p-sp-md bg-surface-container-lowest reveal">
-
                         <div class="w-8 h-[2px] bg-primary mb-4"></div>
-
                         <h4 class="font-h2-mobile text-xl font-bold text-on-background mb-2">Integrity</h4>
-
                         <p class="font-body text-body text-on-surface-variant text-sm">We operate with absolute transparency and adherence to Swiss financial standards.</p>
-
                     </div>
-
                     <div class="border border-outline-variant p-sp-md bg-surface-container-lowest reveal" style="transition-delay: 100ms;">
-
                         <div class="w-8 h-[2px] bg-primary mb-4"></div>
-
                         <h4 class="font-h2-mobile text-xl font-bold text-on-background mb-2">Security</h4>
-
                         <p class="font-body text-body text-on-surface-variant text-sm">Safeguarding your assets and financial interests is our highest priority.</p>
-
                     </div>
-
                     <div class="border border-outline-variant p-sp-md bg-surface-container-lowest reveal" style="transition-delay: 200ms;">
-
                         <div class="w-8 h-[2px] bg-primary mb-4"></div>
-
                         <h4 class="font-h2-mobile text-xl font-bold text-on-background mb-2">Innovation</h4>
-
                         <p class="font-body text-body text-on-surface-variant text-sm">We leverage global networks to provide cutting-edge trade and investment solutions.</p>
-
                     </div>
-
                     <div class="border border-outline-variant p-sp-md bg-surface-container-lowest reveal" style="transition-delay: 300ms;">
-
                         <div class="w-8 h-[2px] bg-primary mb-4"></div>
-
                         <h4 class="font-h2-mobile text-xl font-bold text-on-background mb-2">Excellence</h4>
-
                         <p class="font-body text-body text-on-surface-variant text-sm">Delivering bespoke, premium services tailored to the unique needs of every client.</p>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
-
 
         <!-- News Preview -->
         <section id="insights" class="bg-surface-container-low py-sp-2xl w-full">
@@ -809,339 +438,176 @@
             </div>
         </section>
 
-
-
         <!-- Contact Strip -->
-
         <section id="contact" class="bg-surface-container-high py-sp-2xl w-full">
-
             <div class="max-w-[1440px] mx-auto px-sp-md">
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-sp-2xl">
-
                     <div class="reveal">
-
                         <h2 class="font-h1-mobile text-h1-mobile md:font-h1 md:text-h1 text-on-background mb-6">
-
                             Lets Build Trust Together.
-
                         </h2>
-
                         <p class="font-body text-body text-on-surface-variant max-w-md mb-8">
-
                             Whether you are looking to secure your wealth in precious metals, require robust trade finance solutions, or wish to explore global real estate, our experts are ready to assist you.
-
                         </p>
-
                         <div class="space-y-4">
-
                             <div>
-
                                 <p class="font-eyebrow text-eyebrow text-on-background uppercase">Headquarters</p>
-
                                 <p class="font-body text-body text-on-surface-variant">Chamerstrasse 176<br />Zug 6300, Switzerland</p>
-
                             </div>
-
                             <div>
-
                                 <p class="font-eyebrow text-eyebrow text-on-background uppercase">Telephone</p>
-
                                 <p class="font-body text-body text-on-surface-variant">+41 41 508 31 82</p>
-
                             </div>
-
                             <div>
-
                                 <p class="font-eyebrow text-eyebrow text-on-background uppercase">Email</p>
-
                                 <p class="font-body text-body text-primary">info@trustfinanz.ch</p>
-
                             </div>
-
                         </div>
-
                     </div>
-
                     <div class="reveal" style="transition-delay: 150ms;">
-
                         <!-- Success Banner -->
-
                         <div id="contact-success-msg" class="hidden border border-green-600 bg-green-50 px-5 py-4 flex items-start gap-3">
-
                             <span class="material-symbols-outlined text-green-600 mt-0.5" style="font-size:20px;">check_circle</span>
-
                             <div>
-
                                 <p class="font-button text-button uppercase text-green-800 tracking-wider">Inquiry Received</p>
-
                                 <p class="font-body text-body text-green-700 text-sm mt-1">Thank you. A TrustFinanz advisor will be in touch within 24 hours.</p>
-
                             </div>
-
                         </div>
-
-
 
                         <!-- Error Banner -->
-
                         <div id="contact-error-msg" class="hidden border border-red-400 bg-red-50 px-5 py-4 flex items-start gap-3">
-
                             <span class="material-symbols-outlined text-red-600 mt-0.5" style="font-size:20px;">error</span>
-
                             <div>
-
                                 <p class="font-button text-button uppercase text-red-800 tracking-wider">Submission Failed</p>
-
                                 <p class="font-body text-body text-red-700 text-sm mt-1">Please try again or email us directly at <a href="mailto:info@trustfinanz.ch" class="underline">info@trustfinanz.ch</a>.</p>
-
                             </div>
-
                         </div>
 
-
-
                         <form id="contact-form" class="flex flex-col gap-6">
-
                             <div class="flex flex-col gap-2">
-
                                 <label class="font-eyebrow text-eyebrow text-on-surface-variant uppercase" for="field-full-name">Full Name</label>
-
                                 <input id="field-full-name" class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 focus:ring-0 focus:border-primary text-body font-body transition-colors" placeholder="Enter your full name" type="text" required />
-
                             </div>
-
                             <div class="flex flex-col gap-2">
-
                                 <label class="font-eyebrow text-eyebrow text-on-surface-variant uppercase" for="field-company">Company Name (Optional)</label>
-
                                 <input id="field-company" class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 focus:ring-0 focus:border-primary text-body font-body transition-colors" placeholder="Company Name" type="text" />
-
                             </div>
-
                             <div class="flex flex-col gap-2">
-
                                 <label class="font-eyebrow text-eyebrow text-on-surface-variant uppercase" for="field-email">Email Address</label>
-
                                 <input id="field-email" class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 focus:ring-0 focus:border-primary text-body font-body transition-colors" placeholder="name@company.com" type="email" required />
-
                             </div>
-
                             <div class="flex flex-col gap-2">
-
                                 <label class="font-eyebrow text-eyebrow text-on-surface-variant uppercase" for="field-phone">Phone Number</label>
-
                                 <input id="field-phone" class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 focus:ring-0 focus:border-primary text-body font-body transition-colors" placeholder="+41 -- --- -- --" type="tel" required />
-
                             </div>
-
                             <div class="flex flex-col gap-2">
-
                                 <label class="font-eyebrow text-eyebrow text-on-surface-variant uppercase" for="field-division">Division of Interest</label>
-
                                 <select id="field-division" class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 focus:ring-0 focus:border-primary text-body font-body transition-colors text-on-surface-variant" required>
-
                                     <option>Trust Gold</option>
-
                                     <option>Trust Trade Finance</option>
-
                                     <option>Trust Real Estate</option>
-
                                     <option>General Inquiry</option>
-
                                 </select>
-
                             </div>
-
                             <div class="flex flex-col gap-2">
-
                                 <label class="font-eyebrow text-eyebrow text-on-surface-variant uppercase" for="field-message">Message</label>
-
                                 <textarea id="field-message" rows="3" class="w-full bg-transparent border-0 border-b border-outline-variant px-0 py-2 focus:ring-0 focus:border-primary text-body font-body transition-colors text-on-surface-variant" placeholder="Your message..." required></textarea>
-
                             </div>
-
                             <button id="contact-submit-btn" class="bg-on-background text-surface-container-lowest font-button text-button uppercase py-5 hover:bg-primary transition-colors mt-2 w-fit px-12 flex items-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed" type="submit">
-
                                 <span id="contact-submit-label">Submit Inquiry</span>
-
                                 <span id="contact-submit-spinner" class="hidden material-symbols-outlined animate-spin" style="font-size:16px;">progress_activity</span>
-
                             </button>
-
                             <p class="font-body text-xs text-on-surface-variant opacity-80 mt-1">
-
                                 TrustFinanz GmbH complies with all Swiss data protection regulations. Your information is strictly confidential.
-
                             </p>
-
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
-
 
     </main>
 
-
-
     <!-- Footer -->
-
     <footer class="bg-inverse-surface dark:bg-surface-dim w-full" style="border-top: 1px solid rgba(255,255,255,0.1);">
-
         <!-- Gold accent bar -->
-
         <div style="height:3px; background: linear-gradient(90deg, transparent 0%, #C9A84C 30%, #E8D48B 50%, #C9A84C 70%, transparent 100%);"></div>
 
-
-
         <!-- Main footer grid -->
-
         <div class="max-w-[1440px] mx-auto px-sp-md pt-sp-xl pb-sp-md">
-
             <div class="grid grid-cols-1 md:grid-cols-12 gap-x-sp-lg gap-y-sp-xl">
 
-
-
                 <!-- Brand Column -->
-
                 <div class="md:col-span-4 flex flex-col gap-sp-sm">
-
                     <p class="font-h2 text-h2-mobile text-surface-container-lowest" style="color:#ffffff;">TrustFinanz GmbH</p>
-
                     <p class="font-body text-body text-surface-container-highest opacity-70 max-w-xs leading-relaxed" style="font-size:0.875rem;">
-
                         Headquartered in Switzerland, TrustFinanz GmbH was established on a simple yet profound principle: <em>trust is the ultimate currency.</em>
-
                     </p>
-
                     <p class="font-eyebrow text-eyebrow text-surface-container-highest opacity-50 mt-sp-sm" style="font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase;">
-
                         Operating at Swiss Financial Standards
-
                     </p>
-
                 </div>
-
-
 
                 <!-- Divisions Column -->
-
                 <div class="md:col-span-3 flex flex-col gap-sp-sm">
-
                     <span class="font-eyebrow text-eyebrow text-surface-container-highest opacity-50 mb-2" style="font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase;">Our Divisions</span>
-
                     <a class="font-body text-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200 flex items-center gap-2" href="./precious-metals/" style="font-size:0.9rem;"> Trust Gold
-
                     </a>
-
                     <a class="font-body text-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200 flex items-center gap-2" href="./trade-finance/" style="font-size:0.9rem;"> Trust Trade Finance
-
                     </a>
-
                     <a class="font-body text-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200 flex items-center gap-2" href="./real-estate/" style="font-size:0.9rem;"> Trust Real Estate
-
                     </a>
-
                 </div>
-
-
 
                 <!-- Navigation Column -->
-
                 <div class="md:col-span-2 flex flex-col gap-sp-sm">
-
                     <span class="font-eyebrow text-eyebrow text-surface-container-highest opacity-50 mb-2" style="font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase;">Navigate</span>
-
                     <a class="font-body text-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200" href="#about" style="font-size:0.9rem;">About Us</a>
-
                     <a class="font-body text-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200" href="#insights" style="font-size:0.9rem;">Market Insights</a>
-
                     <a class="font-body text-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200" href="#contact" style="font-size:0.9rem;">Contact</a>
-
                 </div>
-
-
 
                 <!-- Contact Column -->
-
                 <div class="md:col-span-3 flex flex-col gap-sp-sm">
-
                     <span class="font-eyebrow text-eyebrow text-surface-container-highest opacity-50 mb-2" style="font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase;">Contact Us</span>
-
                     <div class="flex flex-col gap-3">
-
                         <div class="flex items-start gap-2">
-
                             <span class="material-symbols-outlined opacity-60" style="font-size:1rem; color:#ffffff; margin-top:2px;">location_on</span>
-
                             <span class="font-body text-surface-container-highest opacity-75" style="font-size:0.85rem; line-height:1.5;">Chamerstrasse 176<br>Zug 6300 &mdash; Switzerland</span>
-
                         </div>
-
                         <div class="flex items-center gap-2">
-
                             <span class="material-symbols-outlined opacity-60" style="font-size:1rem; color:#ffffff;">call</span>
-
                             <div class="flex flex-col">
-
                                 <a href="tel:+41415083182" class="font-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200" style="font-size:0.85rem;">+41 41 508 31 82</a>
-
                             </div>
-
                         </div>
-
                         <div class="flex items-center gap-2">
-
                             <span class="material-symbols-outlined opacity-60" style="font-size:1rem; color:#ffffff;">mail</span>
-
                             <a href="mailto:info@trustfinanz.ch" class="font-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200" style="font-size:0.85rem;">info@trustfinanz.ch</a>
-
                         </div>
-
+                        <div class="flex items-center gap-2">
+                            <!-- SVG wrapper matches sizing of material icons above -->
+                            <svg class="opacity-60" style="width: 1rem; height: 1rem; fill: #ffffff;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                            <a href="https://www.instagram.com/trustfinanz/" target="_blank" rel="noopener noreferrer" class="font-body text-surface-container-highest opacity-75 hover:opacity-100 transition-all duration-200" style="font-size:0.85rem;">@trustfinanz</a>
+                        </div>
                     </div>
-
                 </div>
 
-
-
             </div>
-
         </div>
-
-
 
         <!-- Bottom bar -->
-
         <div style="border-top: 1px solid rgba(255,255,255,0.07);">
-
             <div class="max-w-[1440px] mx-auto px-sp-md py-sp-sm flex flex-col md:flex-row justify-between items-center gap-2">
-
                 <p class="font-body text-surface-container-highest opacity-40" style="font-size:0.78rem;">
-
                     &copy; 2026 TrustFinanz GmbH. All rights reserved.
-
                 </p>
-
                 <p class="font-body text-surface-container-highest opacity-40 text-center" style="font-size:0.78rem;">
-
                     TrustFinanz GmbH complies with all Swiss data protection regulations. Your information is strictly confidential.
-
                 </p>
-
             </div>
-
         </div>
-
     </footer>
-
-
 
     <script>
         /* ─── Supabase Config ────────────────────────────────────── */
@@ -1287,7 +753,5 @@
     </script>
 
 </body>
-
-
 
 </html>

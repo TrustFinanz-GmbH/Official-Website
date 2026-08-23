@@ -224,13 +224,16 @@
                         All Articles
                     </button>
                     <button onclick="showArticle('gold')" id="tab-gold" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
-                        Precious Metals Analysis
+                        Gold Allocation
+                    </button>
+                    <button onclick="showArticle('gold-otc')" id="tab-gold-otc" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
+                        OTC Orchestration
                     </button>
                     <button onclick="showArticle('trade')" id="tab-trade" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
-                        Trade Finance Briefing
+                        Trade Finance
                     </button>
                     <button onclick="showArticle('real-estate')" id="tab-real-estate" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
-                        Real Estate Outlook
+                        Real Estate
                     </button>
                 </div>
             </div>
@@ -241,13 +244,13 @@
         ══════════════════════════════════════════════════ -->
         <section id="article-list-view" class="py-sp-xl">
             <div class="max-w-[1440px] mx-auto px-sp-md">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-sp-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-sp-lg">
 
-                    <!-- Card 1: Gold (UPDATED) -->
+                    <!-- Card 1: Gold (Allocation) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('gold')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Trust Gold Analysis</span>
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Trust Gold</span>
                                 <span class="text-xs text-on-surface-variant">8 min read</span>
                             </div>
                             <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
@@ -259,47 +262,67 @@
                         </div>
                         <div class="pt-6 border-t border-surface-container flex items-center justify-between">
                             <span class="text-xs text-on-surface-variant">Zug Research Desk</span>
-                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Full Article &rarr;</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
                         </div>
                     </article>
 
-                    <!-- Card 2: Trade Finance -->
-                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade')">
+                    <!-- Card 2: Gold (OTC) - NEW -->
+                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('gold-otc')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Trade Finance Briefing</span>
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">OTC Markets</span>
                                 <span class="text-xs text-on-surface-variant">6 min read</span>
                             </div>
                             <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
-                                Navigating International Trade: How SBLCs are streamlining cross-border transactions this quarter.
+                                The Advantage of OTC Trade Orchestration in Precious Metals.
                             </h2>
                             <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
-                                How Standby Letters of Credit (SBLCs) issued under ISP98 and authenticated SWIFT protocols protect liquidity, eliminate counterparty default risk, and support global commodity transactions.
+                                Explore how over-the-counter (OTC) trade orchestration optimizes pricing and ensures discretion for institutional physical gold acquisitions.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-surface-container flex items-center justify-between">
+                            <span class="text-xs text-on-surface-variant">Trade Orchestration</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Trade Finance -->
+                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade')">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Trade Finance</span>
+                                <span class="text-xs text-on-surface-variant">6 min read</span>
+                            </div>
+                            <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
+                                Navigating International Trade: How SBLCs streamline cross-border transactions.
+                            </h2>
+                            <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
+                                How Standby Letters of Credit (SBLCs) issued under ISP98 protect liquidity, eliminate counterparty default risk, and support global commodity transactions.
                             </p>
                         </div>
                         <div class="pt-6 border-t border-surface-container flex items-center justify-between">
                             <span class="text-xs text-on-surface-variant">Trade Desk</span>
-                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Full Article &rarr;</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
                         </div>
                     </article>
 
-                    <!-- Card 3: Real Estate -->
+                    <!-- Card 4: Real Estate -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('real-estate')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Real Estate Outlook</span>
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Real Estate</span>
                                 <span class="text-xs text-on-surface-variant">5 min read</span>
                             </div>
                             <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
                                 European Real Estate Outlook: Top commercial hubs for foreign investment.
                             </h2>
                             <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
-                                A comprehensive examination of capital rotation into prime CBD office assets, modern logistics corridors, and supply-constrained European gateway cities under disciplined Swiss management.
+                                A comprehensive examination of capital rotation into prime CBD office assets, modern logistics corridors, and supply-constrained European gateway cities.
                             </p>
                         </div>
                         <div class="pt-6 border-t border-surface-container flex items-center justify-between">
                             <span class="text-xs text-on-surface-variant">Asset Advisory</span>
-                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Full Article &rarr;</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
                         </div>
                     </article>
 
@@ -308,7 +331,7 @@
         </section>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 1: GOLD (UPDATED CONTENT)
+             FULL ARTICLE 1: GOLD (ALLOCATION)
         ══════════════════════════════════════════════════ -->
         <article id="article-gold" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -367,7 +390,6 @@
                     </p>
                     
                     <p>Our comprehensive facilitation includes:</p>
-                    
                     <ul>
                         <li><strong>LBMA-Accredited Bullion Procurement:</strong> Arranging secure access to internationally recognized bullion through vetted global refineries.</li>
                         <li><strong>Segregated Vaulting Architectures:</strong> Coordinating highly secure, Swiss-regulated, non-bank storage solutions to guarantee absolute asset protection.</li>
@@ -394,6 +416,96 @@
                     <button onclick="showArticle('all')" class="text-xs uppercase tracking-widest text-on-surface hover:text-primary font-semibold">
                         &larr; All Articles
                     </button>
+                    <button onclick="showArticle('gold-otc')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        Next: OTC Trade Orchestration &rarr;
+                    </button>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════════════
+             FULL ARTICLE 2: GOLD (OTC ORCHESTRATION) - NEW
+        ══════════════════════════════════════════════════ -->
+        <article id="article-gold-otc" class="hidden py-sp-xl">
+            <div class="max-w-[960px] mx-auto px-sp-md">
+                
+                <!-- Article Header -->
+                <div class="mb-10 pb-8 border-b border-surface-container-highest">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Precious Metals Facilitation</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">Published Q3 2026</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">6 Min Read</span>
+                    </div>
+                    
+                    <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
+                        The Advantage of OTC Trade Orchestration in Precious Metals
+                    </h1>
+
+                    <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
+                        <p class="font-medium text-on-surface">By TrustFinanz Trade Orchestration, Zug</p>
+                        <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
+                            &larr; Back to all insights
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Article Body -->
+                <div class="article-content">
+                    <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
+                        For institutional buyers, executing high-volume physical gold transactions requires specialized architecture. Over-the-counter (OTC) trade orchestration provides absolute discretion, prevents market slippage, and ensures secure settlement outside of public exchanges, making it the preferred route for high-value asset acquisitions.
+                    </p>
+
+                    <div class="stat-highlight">
+                        <p class="font-eyebrow text-eyebrow uppercase text-primary mb-2">Executive Summary</p>
+                        <p class="text-2xl font-light text-on-background mb-1">Optimizing Capital Deployment</p>
+                        <p class="text-xs text-on-surface-variant">Executing large-scale bullion acquisitions through private OTC channels secures locked-in pricing and prevents the slippage often triggered by public order books.</p>
+                    </div>
+
+                    <h2>The Strategic Value of OTC Execution</h2>
+                    <p>
+                        When acquiring significant allocations of physical bullion, routing orders through public commodities exchanges can trigger unwanted price volatility and market speculation. OTC transactions mitigate this risk entirely. By aligning buyers directly with institutional liquidity providers and primary refineries, OTC orchestration secures locked-in pricing for large-volume acquisitions. This closed-loop execution prevents the "slippage" that often occurs when large orders hit public order books.
+                    </p>
+
+                    <h2>Mitigating Market Slippage and Price Volatility</h2>
+                    <p>
+                        In an OTC framework, the transaction is negotiated bilaterally. This means the price is fixed prior to execution, protecting the acquiring entity from intraday market fluctuations. For corporate treasuries and large private portfolios, this certainty of execution is a non-negotiable parameter for successful capital deployment.
+                    </p>
+
+                    <blockquote>
+                        "Institutional asset acquisition relies on precision. Bilateral OTC frameworks allow for massive capital deployment without triggering speculative market responses."
+                    </blockquote>
+
+                    <h2>How We Facilitate High-Volume OTC Markets</h2>
+                    <p>
+                        TrustFinanz GmbH architects secure, discreet market entry. By coordinating acquisitions across our established network of verified global refineries and institutional counterparties, we ensure precise pricing and seamless global supply chain logistics.
+                    </p>
+                    
+                    <p>Our OTC facilitation ensures:</p>
+                    <ul>
+                        <li><strong>Absolute Confidentiality:</strong> Keeping high-value transactions off public ledgers until final settlement is achieved.</li>
+                        <li><strong>Optimized Capital Deployment:</strong> Eliminating intermediary exchange fees and securing wholesale institutional pricing.</li>
+                        <li><strong>Global Supply Chain Logistics:</strong> Aligning buyers with premier secure transport and vaulting services under rigorous Swiss compliance standards.</li>
+                    </ul>
+
+                    <div class="bg-surface-container p-8 my-10 border-l-2 border-primary">
+                        <h3 class="text-lg font-medium text-on-background mb-2">Consult on OTC Market Entry</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">
+                            TrustFinanz engineers discreet over-the-counter trade structures to ensure precision pricing for institutional precious metal acquisitions.
+                        </p>
+                        <a href="../#contact" class="inline-block bg-primary text-white text-xs uppercase px-6 py-3 font-semibold tracking-wider hover:bg-primary-hover transition-colors">
+                            Speak with an OTC Advisor
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer navigation -->
+                <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
+                    <button onclick="showArticle('gold')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: Gold Allocation
+                    </button>
                     <button onclick="showArticle('trade')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         Next: Trade Finance Briefing &rarr;
                     </button>
@@ -403,7 +515,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 2: TRADE FINANCE (NO CHANGES)
+             FULL ARTICLE 3: TRADE FINANCE
         ══════════════════════════════════════════════════ -->
         <article id="article-trade" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -485,8 +597,8 @@
 
                 <!-- Footer navigation -->
                 <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
-                    <button onclick="showArticle('gold')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
-                        &larr; Prev: Trust Gold Analysis
+                    <button onclick="showArticle('gold-otc')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: OTC Trade Orchestration
                     </button>
                     <button onclick="showArticle('real-estate')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         Next: Real Estate Outlook &rarr;
@@ -497,7 +609,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 3: REAL ESTATE (NO CHANGES)
+             FULL ARTICLE 4: REAL ESTATE
         ══════════════════════════════════════════════════ -->
         <article id="article-real-estate" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -642,11 +754,13 @@
 
     <!-- Interactive Script for Tab/Article Navigation -->
     <script>
-        const articles = ['gold', 'trade', 'real-estate'];
+        // Updated to include 'gold-otc'
+        const articles = ['gold', 'gold-otc', 'trade', 'real-estate'];
 
         function showArticle(articleId) {
             const listView = document.getElementById('article-list-view');
             const goldArticle = document.getElementById('article-gold');
+            const goldOtcArticle = document.getElementById('article-gold-otc');
             const tradeArticle = document.getElementById('article-trade');
             const realEstateArticle = document.getElementById('article-real-estate');
 
@@ -659,14 +773,17 @@
             if (articleId === 'all') {
                 listView.classList.remove('hidden');
                 goldArticle.classList.add('hidden');
+                goldOtcArticle.classList.add('hidden');
                 tradeArticle.classList.add('hidden');
                 realEstateArticle.classList.add('hidden');
+                
                 document.getElementById('tab-all').classList.add('bg-on-background', 'text-white');
                 document.getElementById('tab-all').classList.remove('bg-surface-container', 'text-on-surface');
                 window.history.replaceState(null, '', './');
             } else {
                 listView.classList.add('hidden');
                 goldArticle.classList.toggle('hidden', articleId !== 'gold');
+                goldOtcArticle.classList.toggle('hidden', articleId !== 'gold-otc');
                 tradeArticle.classList.toggle('hidden', articleId !== 'trade');
                 realEstateArticle.classList.toggle('hidden', articleId !== 'real-estate');
 

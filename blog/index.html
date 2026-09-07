@@ -247,6 +247,9 @@
                     <button onclick="showArticle('swiss-intermediary')" id="tab-swiss-intermediary" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
                         Swiss Intermediary
                     </button>
+                    <button onclick="showArticle('triad')" id="tab-triad" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
+                        Global Strategy
+                    </button>
                 </div>
             </div>
         </section>
@@ -256,7 +259,7 @@
         ══════════════════════════════════════════════════ -->
         <section id="article-list-view" class="py-sp-xl">
             <div class="max-w-[1440px] mx-auto px-sp-md">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-sp-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sp-lg">
 
                     <!-- Card 1: Gold (Allocation) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('gold')">
@@ -378,7 +381,7 @@
                         </div>
                     </article>
 
-                    <!-- Card 7: Real Estate Capital - NEW -->
+                    <!-- Card 7: Real Estate Capital -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('real-estate-capital')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -398,7 +401,7 @@
                         </div>
                     </article>
 
-                    <!-- Card 8: Swiss Intermediary - NEW -->
+                    <!-- Card 8: Swiss Intermediary -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('swiss-intermediary')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -414,6 +417,26 @@
                         </div>
                         <div class="pt-6 border-t border-surface-container flex items-center justify-between">
                             <span class="text-xs text-on-surface-variant">Strategic Advisory</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 9: Pillar / Triad - NEW -->
+                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('triad')">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Global Strategy</span>
+                                <span class="text-xs text-on-surface-variant">10 min read</span>
+                            </div>
+                            <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
+                                Architecting Global Capital: The Triad of Gold, Trade, and Real Estate.
+                            </h2>
+                            <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
+                                TrustFinanz GmbH, a premier Swiss intermediary based in Zug, architects cross-border transactions across physical gold, trade finance, and commercial real estate.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-surface-container flex items-center justify-between">
+                            <span class="text-xs text-on-surface-variant">Corporate Advisory</span>
                             <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
                         </div>
                     </article>
@@ -918,7 +941,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 7: REAL ESTATE CAPITAL - NEW
+             FULL ARTICLE 7: REAL ESTATE CAPITAL
         ══════════════════════════════════════════════════ -->
         <article id="article-real-estate-capital" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -994,7 +1017,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 8: SWISS INTERMEDIARY - NEW
+             FULL ARTICLE 8: SWISS INTERMEDIARY
         ══════════════════════════════════════════════════ -->
         <article id="article-swiss-intermediary" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -1062,6 +1085,113 @@
                     <button onclick="showArticle('real-estate-capital')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         &larr; Prev: Real Estate Capital
                     </button>
+                    <button onclick="showArticle('triad')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        Next: Global Triad Strategy &rarr;
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════════════
+             FULL ARTICLE 9: PILLAR / TRIAD - NEW
+        ══════════════════════════════════════════════════ -->
+        <article id="article-triad" class="hidden py-sp-xl">
+            <div class="max-w-[960px] mx-auto px-sp-md">
+                <div class="mb-10 pb-8 border-b border-surface-container-highest">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Global Strategy</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">Published Q3 2026</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">10 Min Read</span>
+                    </div>
+                    <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
+                        Architecting Global Capital: The Triad of Gold, Trade, and Real Estate
+                    </h1>
+                    <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
+                        <p class="font-medium text-on-surface">By TrustFinanz Corporate Advisory, Zug</p>
+                        <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
+                            &larr; Back to all insights
+                        </button>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
+                        In an era of macroeconomic complexity, executing high-value cross-border transactions requires structural precision. Operating from Zug, Switzerland, TrustFinanz GmbH serves as a specialized architect for global commerce. We facilitate seamless institutional alignment across three core verticals: the strategic allocation of physical precious metals, the engineering of global trade finance architectures, and the coordination of commercial real estate capital.
+                    </p>
+
+                    <div class="stat-highlight">
+                        <p class="font-eyebrow text-eyebrow uppercase text-primary mb-2">Executive Summary</p>
+                        <p class="text-2xl font-light text-on-background mb-1">What is the Strategic Value of a Swiss Intermediary?</p>
+                        <p class="text-xs text-on-surface-variant">Global institutions require absolute certainty in execution. Switzerland’s highly regulated financial ecosystem provides the ultimate platform for structuring complex transactions without counterparty friction.</p>
+                    </div>
+
+                    <h2>The Foundation of Swiss Precision</h2>
+                    <p>
+                        Global institutions require absolute certainty in execution. Switzerland’s highly regulated financial ecosystem provides the ultimate platform for structuring complex, multi-jurisdictional transactions. By operating purely at the structural level—rather than acting as a direct supplier or lender—TrustFinanz eliminates friction, ensuring that every financial framework perfectly aligns with our partners' strategic parameters.
+                    </p>
+
+                    <h2>1. Trust Gold: Facilitating Physical Asset Preservation</h2>
+                    <h3>How do we optimize precious metals acquisitions?</h3>
+                    <p>
+                        When corporate treasuries and private portfolios seek to hedge against fiat volatility, physical gold remains the premier asset. However, acquiring large volumes requires discretion and security. 
+                    </p>
+                    <p>
+                        Trust Gold orchestrates secure market entry to the world’s most liquid precious metals markets. Through bilateral Over-The-Counter (OTC) trade orchestration, we lock in precise pricing, mitigating the slippage associated with public exchanges. We align qualified buyers with strictly vetted global refineries to secure LBMA-accredited (London Good Delivery) bullion. Furthermore, we coordinate fully segregated, non-bank vaulting architectures within Switzerland, ensuring absolute, unencumbered asset protection.
+                    </p>
+
+                    <h2>2. Trust Trade Finance: Engineering Liquidity Architectures</h2>
+                    <h3>How do we accelerate cross-border commerce?</h3>
+                    <p>
+                        International trade is often hindered by jurisdictional risk and capital inefficiency. Tying up liquid cash in traditional escrow accounts drains corporate agility. Trust Trade Finance solves this by engineering bespoke credit and liquidity architectures.
+                    </p>
+                    <p>
+                        By coordinating directly with premier global banking institutions, we facilitate access to top-tier financial instruments. Whether structuring Standby Letters of Credit (SBLC / MT760) to collateralize supply chains, arranging Bank Guarantees to neutralize counterparty risk, or leveraging Medium Term Notes (MTNs) via Euroclear for long-term funding, we architect frameworks that unlock operational capital and ensure flawless transaction settlement.
+                    </p>
+
+                    <h2>3. Trust Real Estate: Coordinating Asset Capitalization</h2>
+                    <h3>How do we structure commercial property development?</h3>
+                    <p>
+                        Large-scale commercial real estate and international infrastructure initiatives require highly sophisticated, multi-layered capital structures. Bridging the gap between visionary property developers and institutional capital demands specialized oversight.
+                    </p>
+                    <p>
+                        Trust Real Estate structures collaborative frameworks for high-yield developments across prime European hubs and targeted global markets. We align top-tier institutional capital with premier international developers. Our rigorous oversight guarantees that every project architecture maximizes commercial viability, integrates sustainable development practices, and secures long-term asset value.
+                    </p>
+
+                    <blockquote>
+                        "Executing on a global scale requires the right structural partner. By integrating physical asset security, optimized trade liquidity, and robust real estate capitalization, TrustFinanz GmbH provides the comprehensive architecture necessary for enduring financial success."
+                    </blockquote>
+
+                    <!-- Enhanced GEO & SEO Optimized Contact Block -->
+                    <div class="bg-surface-container p-8 my-10 border-l-2 border-primary">
+                        <h3 class="text-lg font-medium text-on-background mb-4">📍 Global Headquarters & Strategic Inquiries</h3>
+                        <p class="text-sm text-on-surface-variant mb-6">
+                            Operating strictly under Swiss financial compliance, TrustFinanz GmbH facilitates cross-border architectures for qualified international entities. 
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-on-surface">
+                            <div>
+                                <p class="font-semibold text-primary uppercase tracking-wider text-[11px] mb-2">Swiss Corporate Headquarters</p>
+                                <p><strong>TrustFinanz GmbH</strong></p>
+                                <p>Chamerstrasse 176</p>
+                                <p>6300 Zug, Switzerland</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-primary uppercase tracking-wider text-[11px] mb-2">Direct Contact Channels</p>
+                                <p class="mb-1"><strong class="text-on-surface-variant">Telephone:</strong> <a href="tel:+41415083182" class="hover:text-primary transition-colors font-medium">+41 41 508 31 82</a></p>
+                                <p class="mb-1"><strong class="text-on-surface-variant">Email:</strong> <a href="mailto:info@trustfinanz.ch" class="hover:text-primary transition-colors font-medium">info@trustfinanz.ch</a></p>
+                                <p class="mb-1"><strong class="text-on-surface-variant">Website:</strong> <a href="https://www.trustfinanz.ch/" class="hover:text-primary transition-colors font-medium" target="_blank" rel="noopener">www.trustfinanz.ch</a></p>
+                                <p><strong class="text-on-surface-variant">Social:</strong> <a href="https://www.instagram.com/trustfinanz/" class="hover:text-primary transition-colors font-medium" target="_blank" rel="noopener">@trustfinanz</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
+                    <button onclick="showArticle('swiss-intermediary')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: Swiss Intermediary
+                    </button>
                     <button onclick="showArticle('all')" class="text-xs uppercase tracking-widest text-on-surface hover:text-primary font-semibold">
                         All Articles &rarr;
                     </button>
@@ -1121,8 +1251,8 @@
 
     <!-- Interactive Script for Tab/Article Navigation -->
     <script>
-        // Array of all 8 active articles in logical order
-        const articles = ['gold', 'gold-otc', 'trade-sblc', 'trade-bg', 'trade-mtn', 'trade-clearing', 'real-estate-capital', 'swiss-intermediary'];
+        // Array of all 9 active articles in logical order
+        const articles = ['gold', 'gold-otc', 'trade-sblc', 'trade-bg', 'trade-mtn', 'trade-clearing', 'real-estate-capital', 'swiss-intermediary', 'triad'];
 
         function showArticle(articleId) {
             const listView = document.getElementById('article-list-view');

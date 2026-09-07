@@ -229,6 +229,12 @@
                     <button onclick="showArticle('gold-otc')" id="tab-gold-otc" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
                         OTC Orchestration
                     </button>
+                    <button onclick="showArticle('trade-sblc')" id="tab-trade-sblc" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
+                        SBLC Structuring
+                    </button>
+                    <button onclick="showArticle('trade-bg')" id="tab-trade-bg" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
+                        Bank Guarantees
+                    </button>
                     <button onclick="showArticle('trade')" id="tab-trade" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
                         Trade Finance
                     </button>
@@ -244,7 +250,7 @@
         ══════════════════════════════════════════════════ -->
         <section id="article-list-view" class="py-sp-xl">
             <div class="max-w-[1440px] mx-auto px-sp-md">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-sp-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sp-lg">
 
                     <!-- Card 1: Gold (Allocation) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('gold')">
@@ -266,7 +272,7 @@
                         </div>
                     </article>
 
-                    <!-- Card 2: Gold (OTC) - NEW -->
+                    <!-- Card 2: Gold (OTC) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('gold-otc')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -286,7 +292,47 @@
                         </div>
                     </article>
 
-                    <!-- Card 3: Trade Finance -->
+                    <!-- Card 3: Trade (SBLC) - NEW -->
+                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade-sblc')">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Trade Finance</span>
+                                <span class="text-xs text-on-surface-variant">7 min read</span>
+                            </div>
+                            <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
+                                Structuring Standby Letters of Credit (MT760) for Cross-Border Trade.
+                            </h2>
+                            <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
+                                Learn how structuring Standby Letters of Credit (SBLC) through premier global institutions accelerates cross-border commerce and mitigates risk.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-surface-container flex items-center justify-between">
+                            <span class="text-xs text-on-surface-variant">Capital Architectures</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: Trade (Bank Guarantees) - NEW -->
+                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade-bg')">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Risk Mitigation</span>
+                                <span class="text-xs text-on-surface-variant">6 min read</span>
+                            </div>
+                            <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
+                                Mitigating Counterparty Risk via Swiss-Architected Bank Guarantees.
+                            </h2>
+                            <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
+                                Discover how coordinating top-tier Bank Guarantees (BGs) secures international contracts, mitigates risk, and optimizes capital efficiency for global entities.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-surface-container flex items-center justify-between">
+                            <span class="text-xs text-on-surface-variant">Risk Advisory</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 5: Trade Finance (General) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -306,7 +352,7 @@
                         </div>
                     </article>
 
-                    <!-- Card 4: Real Estate -->
+                    <!-- Card 6: Real Estate -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('real-estate')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -335,8 +381,6 @@
         ══════════════════════════════════════════════════ -->
         <article id="article-gold" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
-                
-                <!-- Article Header -->
                 <div class="mb-10 pb-8 border-b border-surface-container-highest">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Precious Metals Facilitation</span>
@@ -345,11 +389,9 @@
                         <span class="text-xs text-on-surface-variant">|</span>
                         <span class="text-xs text-on-surface-variant">8 Min Read</span>
                     </div>
-                    
                     <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
                         Strategic Allocation of Physical Gold in Macroeconomic Volatility
                     </h1>
-
                     <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
                         <p class="font-medium text-on-surface">By TrustFinanz Research Desk, Zug</p>
                         <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
@@ -358,7 +400,6 @@
                     </div>
                 </div>
 
-                <!-- Article Body -->
                 <div class="article-content">
                     <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
                         In times of economic uncertainty and fluctuating fiat currencies, physical gold remains the premier macroeconomic hedge. Securing allocated, LBMA-accredited bullion through verified institutional channels ensures maximum portfolio security, tangibility, and global liquidity.
@@ -411,7 +452,6 @@
                     </div>
                 </div>
 
-                <!-- Footer navigation -->
                 <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
                     <button onclick="showArticle('all')" class="text-xs uppercase tracking-widest text-on-surface hover:text-primary font-semibold">
                         &larr; All Articles
@@ -420,17 +460,14 @@
                         Next: OTC Trade Orchestration &rarr;
                     </button>
                 </div>
-
             </div>
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 2: GOLD (OTC ORCHESTRATION) - NEW
+             FULL ARTICLE 2: GOLD (OTC ORCHESTRATION)
         ══════════════════════════════════════════════════ -->
         <article id="article-gold-otc" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
-                
-                <!-- Article Header -->
                 <div class="mb-10 pb-8 border-b border-surface-container-highest">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Precious Metals Facilitation</span>
@@ -439,11 +476,9 @@
                         <span class="text-xs text-on-surface-variant">|</span>
                         <span class="text-xs text-on-surface-variant">6 Min Read</span>
                     </div>
-                    
                     <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
                         The Advantage of OTC Trade Orchestration in Precious Metals
                     </h1>
-
                     <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
                         <p class="font-medium text-on-surface">By TrustFinanz Trade Orchestration, Zug</p>
                         <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
@@ -452,7 +487,6 @@
                     </div>
                 </div>
 
-                <!-- Article Body -->
                 <div class="article-content">
                     <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
                         For institutional buyers, executing high-volume physical gold transactions requires specialized architecture. Over-the-counter (OTC) trade orchestration provides absolute discretion, prevents market slippage, and ensures secure settlement outside of public exchanges, making it the preferred route for high-value asset acquisitions.
@@ -501,26 +535,188 @@
                     </div>
                 </div>
 
-                <!-- Footer navigation -->
                 <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
                     <button onclick="showArticle('gold')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         &larr; Prev: Gold Allocation
                     </button>
-                    <button onclick="showArticle('trade')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
-                        Next: Trade Finance Briefing &rarr;
+                    <button onclick="showArticle('trade-sblc')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        Next: SBLC Structuring &rarr;
                     </button>
                 </div>
-
             </div>
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 3: TRADE FINANCE
+             FULL ARTICLE 3: TRADE FINANCE (SBLC) - NEW
+        ══════════════════════════════════════════════════ -->
+        <article id="article-trade-sblc" class="hidden py-sp-xl">
+            <div class="max-w-[960px] mx-auto px-sp-md">
+                <div class="mb-10 pb-8 border-b border-surface-container-highest">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Trade Finance Architectures</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">Published Q3 2026</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">7 Min Read</span>
+                    </div>
+                    <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
+                        Structuring Standby Letters of Credit (MT760) for Cross-Border Trade
+                    </h1>
+                    <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
+                        <p class="font-medium text-on-surface">By TrustFinanz Capital Architectures, Zug</p>
+                        <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
+                            &larr; Back to all insights
+                        </button>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
+                        A Standby Letter of Credit (SBLC) is a critical financial instrument used to collateralize international trade obligations. Properly structured via highly secure MT760 SWIFT protocols, it effectively mitigates counterparty risk, unlocking trade liquidity and optimizing capital efficiency for global corporations.
+                    </p>
+
+                    <div class="stat-highlight">
+                        <p class="font-eyebrow text-eyebrow uppercase text-primary mb-2">Executive Summary</p>
+                        <p class="text-2xl font-light text-on-background mb-1">Unlocking Trade Liquidity</p>
+                        <p class="text-xs text-on-surface-variant">By leveraging institutional credit via an SBLC, corporations secure supply chain contracts without tying up liquid operational cash in escrow deposits.</p>
+                    </div>
+
+                    <h2>The Anatomy of an SBLC (MT760)</h2>
+                    <p>
+                        Cross-border transactions inherently carry distinct jurisdictional, currency, and performance risks. An SBLC acts as a definitive credit enhancement. Issued by a premier banking institution, it serves as a guarantee of payment if a party fails to fulfill a specific contractual obligation. The transmission of this instrument via the SWIFT MT760 protocol ensures bank-to-bank verification, creating an immutable ledger of the financial commitment.
+                    </p>
+
+                    <h2>How SBLC Structuring Accelerates Global Commerce</h2>
+                    <p>
+                        Without an SBLC, international trade often requires massive cash reserves to be held in escrow, severely restricting a company's working capital. By leveraging an SBLC, a corporation can secure a multi-million dollar supply chain contract using institutional credit rather than tying up its own liquid cash. This unlocks immense trade liquidity, allowing the corporation to deploy capital into growth and operations rather than idle security deposits.
+                    </p>
+
+                    <blockquote>
+                        "An SBLC issued through authenticated banking channels bridges the trust gap in high-volume global commerce, allowing trading entities to secure supply contracts without compromising capital efficiency."
+                    </blockquote>
+
+                    <h2>The Swiss Advantage in Trade Finance Architectures</h2>
+                    <p>
+                        Rooted in Switzerland’s highly regulated financial ecosystem, Trust Trade Finance serves as a structural architect for complex global commerce. We do not act as a direct issuer of these instruments. Rather, we coordinate directly with top-tier global banks to arrange bespoke liquidity solutions.
+                    </p>
+                    
+                    <p>Our methodology focuses on:</p>
+                    <ul>
+                        <li><strong>Risk Mitigation:</strong> Aligning global entities with the precise instruments required to secure international contracts.</li>
+                        <li><strong>Capital Optimization:</strong> Engineering credit architectures that maximize corporate cash flow.</li>
+                        <li><strong>Rigorous Compliance:</strong> Ensuring all MT760 SWIFT transmissions meet uncompromising international banking standards.</li>
+                    </ul>
+
+                    <div class="bg-surface-container p-8 my-10 border-l-2 border-primary">
+                        <h3 class="text-lg font-medium text-on-background mb-2">Explore SBLC Architectures</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">
+                            TrustFinanz structures bespoke SBLC and trade finance facilities tailored to your corporate supply chain requirements.
+                        </p>
+                        <a href="../#contact" class="inline-block bg-primary text-white text-xs uppercase px-6 py-3 font-semibold tracking-wider hover:bg-primary-hover transition-colors">
+                            Speak with a Trade Advisor
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
+                    <button onclick="showArticle('gold-otc')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: OTC Orchestration
+                    </button>
+                    <button onclick="showArticle('trade-bg')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        Next: Bank Guarantees &rarr;
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════════════
+             FULL ARTICLE 4: TRADE FINANCE (BANK GUARANTEES) - NEW
+        ══════════════════════════════════════════════════ -->
+        <article id="article-trade-bg" class="hidden py-sp-xl">
+            <div class="max-w-[960px] mx-auto px-sp-md">
+                <div class="mb-10 pb-8 border-b border-surface-container-highest">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Risk Mitigation</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">Published Q3 2026</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">6 Min Read</span>
+                    </div>
+                    <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
+                        Mitigating Counterparty Risk via Swiss-Architected Bank Guarantees
+                    </h1>
+                    <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
+                        <p class="font-medium text-on-surface">By TrustFinanz Risk Advisory, Zug</p>
+                        <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
+                            &larr; Back to all insights
+                        </button>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
+                        In the complex arena of cross-border trade, securing contractual obligations is paramount. Coordinating the issuance of top-tier Bank Guarantees (BGs) effectively neutralizes counterparty risk while preserving a corporation's working capital, fostering immediate trust between international entities.
+                    </p>
+
+                    <div class="stat-highlight">
+                        <p class="font-eyebrow text-eyebrow uppercase text-primary mb-2">Executive Summary</p>
+                        <p class="text-2xl font-light text-on-background mb-1">Bridging the Trust Gap</p>
+                        <p class="text-xs text-on-surface-variant">Bank Guarantees ensure that liabilities are met, replacing traditional cash-heavy escrow solutions with institutional credit assurances.</p>
+                    </div>
+
+                    <h2>Optimizing Contractual Security</h2>
+                    <p>
+                        A Bank Guarantee ensures that a corporate entity's liabilities are definitively met in the event they fail to fulfill contractual terms. Whether utilized for performance bonds, advance payment guarantees, or financial security, a BG leverages institutional credit to bridge the inherent trust gap between foreign buyers and sellers.
+                    </p>
+
+                    <h2>Cash Flow Preservation vs. Escrow</h2>
+                    <p>
+                        The traditional method of securing an international contract involves placing substantial funds into a neutral escrow account. This process is highly inefficient, draining a company's operational liquidity. By contrast, an architected Bank Guarantee allows a company to prove financial capability and secure a contract for a fraction of the total capital cost, keeping their primary funds liquid and active.
+                    </p>
+
+                    <blockquote>
+                        "Leveraging institutional credit over liquid cash is the hallmark of sophisticated corporate treasury management in international markets."
+                    </blockquote>
+
+                    <h2>Strategic Coordination of Credit Instruments</h2>
+                    <p>
+                        TrustFinanz GmbH acts as the strategic nexus between global corporate operations and premier banking institutions. We oversee the precise structuring and coordination of BGs.
+                    </p>
+                    
+                    <p>Our facilitation ensures:</p>
+                    <ul>
+                        <li><strong>Instrument Precision:</strong> Selecting the exact type of guarantee (Performance, Financial, Advance Payment) to match the strategic parameters of the deal.</li>
+                        <li><strong>Institutional Alignment:</strong> Coordinating with top-tier banks whose paper is universally accepted across global jurisdictions.</li>
+                        <li><strong>Regulatory Adherence:</strong> Structuring the framework to align perfectly with both Swiss financial standards and international cross-border trade laws (such as URDG 758).</li>
+                    </ul>
+
+                    <div class="bg-surface-container p-8 my-10 border-l-2 border-primary">
+                        <h3 class="text-lg font-medium text-on-background mb-2">Secure Your International Contracts</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">
+                            TrustFinanz coordinates the issuance of top-tier Bank Guarantees, securing cross-border agreements without draining working capital.
+                        </p>
+                        <a href="../#contact" class="inline-block bg-primary text-white text-xs uppercase px-6 py-3 font-semibold tracking-wider hover:bg-primary-hover transition-colors">
+                            Request Risk Mitigation Advisory
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
+                    <button onclick="showArticle('trade-sblc')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: SBLC Structuring
+                    </button>
+                    <button onclick="showArticle('trade')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        Next: Trade Finance Overview &rarr;
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════════════
+             FULL ARTICLE 5: TRADE FINANCE (GENERAL)
         ══════════════════════════════════════════════════ -->
         <article id="article-trade" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
-                
-                <!-- Article Header -->
                 <div class="mb-10 pb-8 border-b border-surface-container-highest">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Trade Finance Briefing</span>
@@ -529,11 +725,9 @@
                         <span class="text-xs text-on-surface-variant">|</span>
                         <span class="text-xs text-on-surface-variant">6 Min Read</span>
                     </div>
-                    
                     <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
                         Navigating International Trade: How SBLCs are streamlining cross-border transactions this quarter.
                     </h1>
-
                     <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
                         <p class="font-medium text-on-surface">By TrustFinanz Trade Advisory, Zug</p>
                         <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
@@ -542,7 +736,6 @@
                     </div>
                 </div>
 
-                <!-- Article Body -->
                 <div class="article-content">
                     <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
                         In an international trade environment shaped by supply chain realignment and tighter banking liquidity, Standby Letters of Credit (SBLCs) have re-emerged as the premier guarantee mechanism for high-value commodity and cross-border procurement contracts.
@@ -595,26 +788,22 @@
                     </div>
                 </div>
 
-                <!-- Footer navigation -->
                 <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
-                    <button onclick="showArticle('gold-otc')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
-                        &larr; Prev: OTC Trade Orchestration
+                    <button onclick="showArticle('trade-bg')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: Bank Guarantees
                     </button>
                     <button onclick="showArticle('real-estate')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         Next: Real Estate Outlook &rarr;
                     </button>
                 </div>
-
             </div>
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 4: REAL ESTATE
+             FULL ARTICLE 6: REAL ESTATE
         ══════════════════════════════════════════════════ -->
         <article id="article-real-estate" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
-                
-                <!-- Article Header -->
                 <div class="mb-10 pb-8 border-b border-surface-container-highest">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Real Estate Outlook</span>
@@ -623,11 +812,9 @@
                         <span class="text-xs text-on-surface-variant">|</span>
                         <span class="text-xs text-on-surface-variant">5 Min Read</span>
                     </div>
-                    
                     <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
                         European Real Estate Outlook: Top commercial hubs for foreign investment.
                     </h1>
-
                     <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
                         <p class="font-medium text-on-surface">By TrustFinanz Asset Advisory, Zug</p>
                         <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
@@ -636,7 +823,6 @@
                     </div>
                 </div>
 
-                <!-- Article Body -->
                 <div class="article-content">
                     <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
                         European commercial real estate in 2026 is experiencing a disciplined recovery. With stabilizing inflation metrics and normalized interest rate benchmarks across the Eurozone and Switzerland, international capital is actively returning to prime commercial hubs.
@@ -689,7 +875,6 @@
                     </div>
                 </div>
 
-                <!-- Footer navigation -->
                 <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
                     <button onclick="showArticle('trade')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         &larr; Prev: Trade Finance Briefing
@@ -698,7 +883,6 @@
                         All Articles &rarr;
                     </button>
                 </div>
-
             </div>
         </article>
 
@@ -715,7 +899,7 @@
                     </div>
                     <p class="text-xs text-neutral-400 leading-relaxed">
                         Chamerstrasse 176<br />
-                        Zug 6300 &mdash; Switzerland
+                        Zug 6300, Switzerland
                     </p>
                 </div>
 
@@ -741,11 +925,7 @@
                 <div>
                     <h4 class="font-eyebrow text-eyebrow uppercase text-primary mb-4 tracking-widest">Direct Contact</h4>
                     <p class="text-xs text-neutral-300 mb-1">+41 41 508 31 82</p>
-                    <p class="text-xs text-primary mb-2"><a href="mailto:info@trustfinanz.ch" class="hover:text-primary-hover transition-colors">info@trustfinanz.ch</a></p>
-                    <div class="flex items-center gap-1.5 text-xs text-primary">
-                        <svg class="fill-current w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                        <a href="https://www.instagram.com/trustfinanz/" target="_blank" rel="noopener noreferrer" class="hover:text-primary-hover transition-colors">@trustfinanz</a>
-                    </div>
+                    <p class="text-xs text-primary"><a href="mailto:info@trustfinanz.ch">info@trustfinanz.ch</a></p>
                 </div>
             </div>
 
@@ -758,15 +938,19 @@
 
     <!-- Interactive Script for Tab/Article Navigation -->
     <script>
-        // Updated to include 'gold-otc'
-        const articles = ['gold', 'gold-otc', 'trade', 'real-estate'];
+        // Array of all 6 active articles
+        const articles = ['gold', 'gold-otc', 'trade-sblc', 'trade-bg', 'trade', 'real-estate'];
 
         function showArticle(articleId) {
             const listView = document.getElementById('article-list-view');
-            const goldArticle = document.getElementById('article-gold');
-            const goldOtcArticle = document.getElementById('article-gold-otc');
-            const tradeArticle = document.getElementById('article-trade');
-            const realEstateArticle = document.getElementById('article-real-estate');
+            
+            // Loop through all articles and toggle visibility
+            articles.forEach(id => {
+                const el = document.getElementById(`article-${id}`);
+                if (el) {
+                    el.classList.toggle('hidden', articleId !== id);
+                }
+            });
 
             // Reset tab styles
             document.querySelectorAll('.topic-tab').forEach(tab => {
@@ -776,21 +960,12 @@
 
             if (articleId === 'all') {
                 listView.classList.remove('hidden');
-                goldArticle.classList.add('hidden');
-                goldOtcArticle.classList.add('hidden');
-                tradeArticle.classList.add('hidden');
-                realEstateArticle.classList.add('hidden');
-                
                 document.getElementById('tab-all').classList.add('bg-on-background', 'text-white');
                 document.getElementById('tab-all').classList.remove('bg-surface-container', 'text-on-surface');
                 window.history.replaceState(null, '', './');
             } else {
                 listView.classList.add('hidden');
-                goldArticle.classList.toggle('hidden', articleId !== 'gold');
-                goldOtcArticle.classList.toggle('hidden', articleId !== 'gold-otc');
-                tradeArticle.classList.toggle('hidden', articleId !== 'trade');
-                realEstateArticle.classList.toggle('hidden', articleId !== 'real-estate');
-
+                
                 const activeTab = document.getElementById(`tab-${articleId}`);
                 if (activeTab) {
                     activeTab.classList.add('bg-on-background', 'text-white');

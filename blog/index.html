@@ -15,7 +15,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Market Insights &amp; Research | TrustFinanz GmbH</title>
-    <meta name="description" content="Institutional research and market insights from TrustFinanz GmbH across precious metals, trade finance, and European commercial real estate." />
+    <meta name="description" content="Institutional research and market insights from TrustFinanz GmbH across precious metals, trade finance, debt capital architectures, and European real estate." />
     <link rel="icon" type="image/png" href="../assets/images/Top-Logo.png" />
     <link rel="apple-touch-icon" href="../assets/images/Top-Logo.png" />
 
@@ -208,7 +208,7 @@
                         Insights &amp; Analysis.
                     </h1>
                     <p class="font-body text-body-large text-on-surface-variant mt-4 leading-relaxed max-w-2xl">
-                        Authoritative briefings from our Zug headquarters on physical bullion allocation, cross-border credit instruments, and prime European commercial assets.
+                        Authoritative briefings from our Zug headquarters on physical bullion allocation, cross-border credit instruments, debt capital architectures, and prime European commercial assets.
                     </p>
                 </div>
             </div>
@@ -234,6 +234,12 @@
                     </button>
                     <button onclick="showArticle('trade-bg')" id="tab-trade-bg" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
                         Bank Guarantees
+                    </button>
+                    <button onclick="showArticle('trade-mtn')" id="tab-trade-mtn" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
+                        MTN Structuring
+                    </button>
+                    <button onclick="showArticle('trade-clearing')" id="tab-trade-clearing" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
+                        Clearing Systems
                     </button>
                     <button onclick="showArticle('trade')" id="tab-trade" class="topic-tab px-5 py-2.5 text-xs font-medium uppercase tracking-wider transition-colors bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap">
                         Trade Finance
@@ -292,7 +298,7 @@
                         </div>
                     </article>
 
-                    <!-- Card 3: Trade (SBLC) - NEW -->
+                    <!-- Card 3: Trade (SBLC) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade-sblc')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -312,7 +318,7 @@
                         </div>
                     </article>
 
-                    <!-- Card 4: Trade (Bank Guarantees) - NEW -->
+                    <!-- Card 4: Trade (Bank Guarantees) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade-bg')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -332,7 +338,47 @@
                         </div>
                     </article>
 
-                    <!-- Card 5: Trade Finance (General) -->
+                    <!-- Card 5: Trade (MTN) - NEW -->
+                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade-mtn')">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Debt Capital</span>
+                                <span class="text-xs text-on-surface-variant">7 min read</span>
+                            </div>
+                            <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
+                                Leveraging MTNs (Medium Term Notes) for Corporate Liquidity.
+                            </h2>
+                            <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
+                                Understand the vital role of Medium Term Notes (MTN) in corporate finance. TrustFinanz GmbH architects debt capital frameworks for international markets.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-surface-container flex items-center justify-between">
+                            <span class="text-xs text-on-surface-variant">Liquidity Strategy</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 6: Trade (Clearing) - NEW -->
+                    <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade-clearing')">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Settlement Architectures</span>
+                                <span class="text-xs text-on-surface-variant">6 min read</span>
+                            </div>
+                            <h2 class="font-h2-mobile text-h2-mobile text-on-background group-hover:text-primary transition-colors mb-4">
+                                Navigating Euroclear and Clearstream Settlement Architectures.
+                            </h2>
+                            <p class="font-body text-body text-on-surface-variant line-clamp-3 mb-6">
+                                Learn how institutional debt instruments like bonds and MTNs are secured and settled flawlessly through elite global clearing frameworks.
+                            </p>
+                        </div>
+                        <div class="pt-6 border-t border-surface-container flex items-center justify-between">
+                            <span class="text-xs text-on-surface-variant">Market Infrastructure</span>
+                            <span class="font-button text-button uppercase text-primary group-hover:underline">Read Article &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 7: Trade Finance (General) -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('trade')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -352,7 +398,7 @@
                         </div>
                     </article>
 
-                    <!-- Card 6: Real Estate -->
+                    <!-- Card 8: Real Estate -->
                     <article class="bg-white border border-surface-container-highest p-8 flex flex-col justify-between hover:border-primary transition-all group cursor-pointer" onclick="showArticle('real-estate')">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -547,7 +593,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 3: TRADE FINANCE (SBLC) - NEW
+             FULL ARTICLE 3: TRADE FINANCE (SBLC)
         ══════════════════════════════════════════════════ -->
         <article id="article-trade-sblc" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -630,7 +676,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 4: TRADE FINANCE (BANK GUARANTEES) - NEW
+             FULL ARTICLE 4: TRADE FINANCE (BANK GUARANTEES)
         ══════════════════════════════════════════════════ -->
         <article id="article-trade-bg" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -705,6 +751,165 @@
                     <button onclick="showArticle('trade-sblc')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         &larr; Prev: SBLC Structuring
                     </button>
+                    <button onclick="showArticle('trade-mtn')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        Next: MTN Structuring &rarr;
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════════════
+             FULL ARTICLE 5: TRADE (MTN) - NEW
+        ══════════════════════════════════════════════════ -->
+        <article id="article-trade-mtn" class="hidden py-sp-xl">
+            <div class="max-w-[960px] mx-auto px-sp-md">
+                <div class="mb-10 pb-8 border-b border-surface-container-highest">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Debt Capital Architectures</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">Published Q3 2026</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">7 Min Read</span>
+                    </div>
+                    <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
+                        Leveraging MTNs (Medium Term Notes) for Corporate Liquidity
+                    </h1>
+                    <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
+                        <p class="font-medium text-on-surface">By TrustFinanz Capital Architectures, Zug</p>
+                        <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
+                            &larr; Back to all insights
+                        </button>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
+                        Medium Term Notes (MTNs) are highly flexible, institutional-grade debt instruments issued to raise corporate capital. Structuring these instruments through global clearing houses provides institutions with optimized, long-term liquidity and highly agile debt architectures.
+                    </p>
+
+                    <div class="stat-highlight">
+                        <p class="font-eyebrow text-eyebrow uppercase text-primary mb-2">Executive Summary</p>
+                        <p class="text-2xl font-light text-on-background mb-1">Agile Debt Architectures</p>
+                        <p class="text-xs text-on-surface-variant">Unlike massive single-issue bonds, MTNs allow for continuous issuance over specific periods, perfectly aligning corporate debt architecture with real-time operational funding requirements.</p>
+                    </div>
+
+                    <h2>What is the Strategic Value of MTN Structuring?</h2>
+                    <p>
+                        Unlike traditional long-term corporate bonds—which require massive, single-day issuances and rigid regulatory filings—MTNs offer continuous issuance over specific periods. Typically maturing between five and ten years, MTNs allow corporate treasuries to constantly align their debt architecture with real-time operational funding requirements.
+                    </p>
+
+                    <h2>Continuous Issuance and Agile Debt Architectures</h2>
+                    <p>
+                        Because MTNs can be issued continuously (often through an MTN program), corporations can capitalize on favorable interest rate windows incrementally. If market conditions are highly favorable on a Tuesday, a tranche of notes can be issued immediately. This agility makes MTNs a cornerstone of modern corporate debt structuring, allowing for nuanced collateralization and optimized capital raising without the regulatory burden of a massive, single-issue bond.
+                    </p>
+
+                    <blockquote>
+                        "MTNs provide unparalleled agility. The ability to issue debt in continuous tranches allows corporate treasuries to capture favorable interest rate windows instantaneously."
+                    </blockquote>
+
+                    <h2>Orchestrating Institutional Debt Frameworks</h2>
+                    <p>
+                        Navigating international debt capital markets requires absolute precision and high-level institutional relationships. Acting strictly as a strategic intermediary, TrustFinanz GmbH specializes in arranging access to these sophisticated institutional bonds.
+                    </p>
+                    
+                    <p>We coordinate with premier financial institutions to:</p>
+                    <ul>
+                        <li><strong>Structure Debt Capital:</strong> Architecting frameworks that optimize cross-border corporate funding.</li>
+                        <li><strong>Enhance Collateralization:</strong> Utilizing top-tier bonds to secure operational capital across multiple jurisdictions.</li>
+                        <li><strong>Optimize Yield and Maturity:</strong> Aligning the parameters of the note perfectly with the corporate entity's long-term financial objectives.</li>
+                    </ul>
+
+                    <div class="bg-surface-container p-8 my-10 border-l-2 border-primary">
+                        <h3 class="text-lg font-medium text-on-background mb-2">Optimize Your Debt Architecture</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">
+                            TrustFinanz structures sophisticated Medium Term Note (MTN) frameworks to optimize corporate funding and long-term liquidity strategies.
+                        </p>
+                        <a href="../#contact" class="inline-block bg-primary text-white text-xs uppercase px-6 py-3 font-semibold tracking-wider hover:bg-primary-hover transition-colors">
+                            Speak with a Capital Advisor
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
+                    <button onclick="showArticle('trade-bg')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: Bank Guarantees
+                    </button>
+                    <button onclick="showArticle('trade-clearing')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        Next: Clearing Systems &rarr;
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- ══════════════════════════════════════════════════
+             FULL ARTICLE 6: TRADE (CLEARING) - NEW
+        ══════════════════════════════════════════════════ -->
+        <article id="article-trade-clearing" class="hidden py-sp-xl">
+            <div class="max-w-[960px] mx-auto px-sp-md">
+                <div class="mb-10 pb-8 border-b border-surface-container-highest">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="font-eyebrow text-eyebrow uppercase text-primary tracking-widest">Settlement Architectures</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">Published Q3 2026</span>
+                        <span class="text-xs text-on-surface-variant">|</span>
+                        <span class="text-xs text-on-surface-variant">6 Min Read</span>
+                    </div>
+                    <h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-on-background tracking-tight mb-6">
+                        Navigating Euroclear and Clearstream Settlement Architectures
+                    </h1>
+                    <div class="flex items-center justify-between flex-wrap gap-4 text-xs text-on-surface-variant">
+                        <p class="font-medium text-on-surface">By TrustFinanz Settlement Advisory, Zug</p>
+                        <button onclick="showArticle('all')" class="text-primary hover:underline uppercase text-[11px] font-semibold tracking-wider flex items-center gap-1">
+                            &larr; Back to all insights
+                        </button>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p class="font-body-large text-lg text-on-background font-normal leading-relaxed">
+                        Flawless execution in global debt capital markets relies entirely on premier clearing houses. Euroclear and Clearstream serve as the essential infrastructural backbone for the settlement, safekeeping, and asset servicing of top-tier institutional bonds and Medium Term Notes (MTNs).
+                    </p>
+
+                    <div class="stat-highlight">
+                        <p class="font-eyebrow text-eyebrow uppercase text-primary mb-2">Executive Summary</p>
+                        <p class="text-2xl font-light text-on-background mb-1">Institutional Settlement Security</p>
+                        <p class="text-xs text-on-surface-variant">Utilizing Euroclear or Clearstream ensures instantaneous, secure transfer of securities against payment (DvP), completely mitigating settlement risk.</p>
+                    </div>
+
+                    <h2>The Importance of Clearing House Integration</h2>
+                    <p>
+                        For a financial instrument to carry weight in cross-border commerce, its provenance, ownership, and settlement mechanisms must be infallible. A bond that cannot be electronically verified and cleared is essentially illiquid. Utilizing Euroclear or Clearstream ensures the instantaneous, secure transfer of securities against payment, completely mitigating settlement risk across different global time zones and legal jurisdictions.
+                    </p>
+
+                    <h2>Mitigating Cross-Border Settlement Risk</h2>
+                    <p>
+                        When institutions trade debt instruments, the gap between the agreement to trade and the actual transfer of assets and cash introduces severe systemic risk. Euroclear and Clearstream neutralize this by acting as the central depository. They ensure that the asset is only transferred when the corresponding capital is simultaneously delivered, providing absolute security to all counterparties involved in the transaction.
+                    </p>
+
+                    <blockquote>
+                        "Without integration into a premier clearing house, a debt instrument lacks global liquidity. Euroclear and Clearstream provide the indispensable architecture for secure cross-border trade."
+                    </blockquote>
+
+                    <h2>Structuring Compliant Capital Access</h2>
+                    <p>
+                        TrustFinanz GmbH engineers bespoke financial architectures that seamlessly integrate with these elite clearing systems. By aligning corporate objectives with institutional debt capital frameworks, we facilitate secure, verifiable, and highly liquid cross-border funding strategies. We ensure that every instrument we help architect is perfectly positioned for flawless execution within these global clearing environments.
+                    </p>
+
+                    <div class="bg-surface-container p-8 my-10 border-l-2 border-primary">
+                        <h3 class="text-lg font-medium text-on-background mb-2">Align With Premier Clearing Frameworks</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">
+                            Ensure your corporate debt instruments are structured for flawless settlement and global liquidity via Euroclear and Clearstream architectures.
+                        </p>
+                        <a href="../#contact" class="inline-block bg-primary text-white text-xs uppercase px-6 py-3 font-semibold tracking-wider hover:bg-primary-hover transition-colors">
+                            Inquire with Settlement Advisory
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
+                    <button onclick="showArticle('trade-mtn')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: MTN Structuring
+                    </button>
                     <button onclick="showArticle('trade')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         Next: Trade Finance Overview &rarr;
                     </button>
@@ -713,7 +918,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 5: TRADE FINANCE (GENERAL)
+             FULL ARTICLE 7: TRADE FINANCE (GENERAL)
         ══════════════════════════════════════════════════ -->
         <article id="article-trade" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -789,8 +994,8 @@
                 </div>
 
                 <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
-                    <button onclick="showArticle('trade-bg')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
-                        &larr; Prev: Bank Guarantees
+                    <button onclick="showArticle('trade-clearing')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
+                        &larr; Prev: Clearing Systems
                     </button>
                     <button onclick="showArticle('real-estate')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
                         Next: Real Estate Outlook &rarr;
@@ -800,7 +1005,7 @@
         </article>
 
         <!-- ══════════════════════════════════════════════════
-             FULL ARTICLE 6: REAL ESTATE
+             FULL ARTICLE 8: REAL ESTATE
         ══════════════════════════════════════════════════ -->
         <article id="article-real-estate" class="hidden py-sp-xl">
             <div class="max-w-[960px] mx-auto px-sp-md">
@@ -877,7 +1082,7 @@
 
                 <div class="mt-12 pt-8 border-t border-surface-container-highest flex justify-between items-center">
                     <button onclick="showArticle('trade')" class="text-xs uppercase tracking-widest text-primary hover:underline font-semibold">
-                        &larr; Prev: Trade Finance Briefing
+                        &larr; Prev: Trade Finance Overview
                     </button>
                     <button onclick="showArticle('all')" class="text-xs uppercase tracking-widest text-on-surface hover:text-primary font-semibold">
                         All Articles &rarr;
@@ -938,8 +1143,8 @@
 
     <!-- Interactive Script for Tab/Article Navigation -->
     <script>
-        // Array of all 6 active articles
-        const articles = ['gold', 'gold-otc', 'trade-sblc', 'trade-bg', 'trade', 'real-estate'];
+        // Array of all 8 active articles in logical order
+        const articles = ['gold', 'gold-otc', 'trade-sblc', 'trade-bg', 'trade-mtn', 'trade-clearing', 'trade', 'real-estate'];
 
         function showArticle(articleId) {
             const listView = document.getElementById('article-list-view');
